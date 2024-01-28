@@ -1,0 +1,122 @@
+/**
+ * Cookie Consent Popup Styles
+ * -----------------------------------------------------------------------------
+ */
+
+/* Set up styling for the main cookie consent popup */
+.cookie-consent-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for fading in the cookie consent popup */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Set up styling for the content inside the cookie consent popup */
+.cookie-popup-content {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #fff;
+}
+
+/* Styling for the buttons inside the cookie consent popup */
+.cookie-popup-content button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Styling for the 'Accept Cookies' button */
+.cookie-popup-content #acceptCookies {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Styling for the 'Decline Cookies' button */
+.cookie-popup-content #declineCookies {
+  background-color: #f44336;
+  color: #fff;
+}
+
+/* Styling for the text inside the cookie consent popup */
+.cookie-popup-content p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Styling for the 'Accept Cookies' button icon */
+.cookie-popup-content #acceptCookies::before {
+  content: "🍪";
+  margin-right: 5px;
+}
+
+/**
+* Cookie Consent Popup HTML Structure
+* -----------------------------------------------------------------------------
+*/
+
+/* Styling for the entire cookie consent popup container */
+#cookieConsentPopup {
+  display: none; /* Initially hidden */
+
+}
+/* Dodaj animacje dla przycisków */
+#advanced-form button,
+.expand-options,
+.cookie-popup-content button,
+#confirmation a {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dodaj animacje dla hovera */
+#advanced-form button:hover,
+.expand-options:hover,
+.cookie-popup-content button:hover,
+#confirmation a:hover {
+    background: #003d82;
+    color: white;
+}
+
+/* Dodaj animacje negatywu zapętlone */
+@keyframes negativeColorLoop {
+    0% {
+        filter: invert(0);
+    }
+
+    50% {
+        filter: invert(1);
+    }
+
+    100% {
+        filter: invert(0);
+    }
+}
+
+/* Dodaj animacje negatywu zapętlone dla przycisków */
+#advanced-form button:hover,
+.expand-options:hover,
+.cookie-popup-content button:hover,
+#confirmation a:hover {
+    animation: negativeColorLoop 2s infinite;
+}

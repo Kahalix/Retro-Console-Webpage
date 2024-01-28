@@ -1,0 +1,507 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nintendo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cookie.css">
+  <link rel="stylesheet" href="consoles.css">
+ <style>
+    .grid-container::after {
+      background-image: url('/projekt/goombanes.png');
+    }
+  </style>
+</head>
+<div id="cookieConsentPopup" class="cookie-consent-popup" style="display: none;">
+  <div class="cookie-popup-content">
+      <p>This website uses cookies to provide a better quality of services. Do you agree to their use?</p>
+      <button id="acceptCookies">I agree</button>
+      <button id="declineCookies">I disagree</button>
+  </div>
+</div>
+
+<body>
+  <section id="menus">
+    <header>
+      <nav id="mainnav">
+        <img id="mainIcon" src="/projekt/6170787.png" alt="mainIcon">
+        <ul class="menu">
+          <li>
+            <a href="LabStronka.html">Home</a>
+          </li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside>
+
+      <img id="rightarrow" src="/projekt/rightarrow.png" alt="rightarrow">
+      <input type="checkbox" id="btnControl" />
+      <label class="btn" for="btnControl"><img id="leftarrow" src="/projekt/leftarrow.png" alt="leftarrow"></label>
+      <div id="sideMenu">
+        <ul>
+          <li class="has-submenu">
+            <a href="#">Producents</a>
+            <ul class="submenu">
+              <li><a href="/projekt/Producentsinfo.html">Informations</a></li>
+              <li><a href="/projekt/Producents.html">Consoles/Computers</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="#">Emulation</a>
+            <ul class="submenu">
+              <li><a href="#">Informations</a></li>
+              <li><a href="#">Emulators</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Speedruns</a></li>
+          <li><a href="/projekt/Form.html">Form</a></li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+  <main id="carsize">
+    <h1>Nintendo</h1>
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="/projekt/nescontr.png" alt="nesctr" id="nescon"> <br>
+        Nintendo has been a pioneering force in the video game console industry, with a legacy of creating innovative and beloved gaming systems that have captivated audiences worldwide. Known for their emphasis on fun and family-friendly content, Nintendo consoles often stand out for their unique designs and the introduction of new gaming experiences.
+        Overall, Nintendo's console strategy focuses on creating unique gaming experiences with a strong emphasis on quality game design and broad accessibility. This approach has solidified their position as a major player in the gaming market, with a reputation for creativity and innovation that continues to shape the industry.
+      </div>
+
+      <div class="grid-item">
+        Nintendo has been a pioneering force in the video game console industry, with a legacy of creating innovative and beloved gaming systems that have captivated audiences worldwide. Known for their emphasis on fun and family-friendly content, Nintendo consoles often stand out for their unique designs and the introduction of new gaming experiences.
+        
+      </div>
+      <div class="grid-item">Market Position
+        Sales Performance: Nintendo consoles have a varied sales history, with some systems achieving monumental success and others facing commercial challenges. Despite the ups and downs, Nintendo's ability to innovate has kept them relevant and competitive in the market.
+        
+        Adaptability: The company has shown a keen ability to adapt to market trends while also defining new ones. By listening to their audience and evolving their consoles to meet the changing demands of gamers, Nintendo has maintained a significant and loyal consumer base.
+        
+        Industry Influence: Nintendo's consoles have historically set industry standards in both hardware and software, influencing game design and gameplay mechanics across the entire video game industry.
+      </div>
+
+    </div>
+    <h2>Choose one option</h2>
+    
+    <div class="console-options">
+      <button class="console-name" onclick="showConsoleInfo('console1')"><img src="/projekt/nextxt.png"
+          alt="nestxt"></button>
+      <button class="console-name" onclick="showConsoleInfo('console2')"><img src="/projekt/gbtxt.png"
+          alt="gbtxt"></button>
+      <button class="console-name" onclick="showConsoleInfo('console3')"><img src="/projekt/snestxt.png"
+          alt="snestxt"></button>
+      <button class="console-name" onclick="showConsoleInfo('console4')"><img src="/projekt/n64txt.png"
+          alt="n64txt"></button>
+      <button class="console-name" onclick="showConsoleInfo('console5')"><img src="/projekt/gbctxt.png"
+          alt="gbctxt"></button>
+      <button class="console-name" onclick="showConsoleInfo('console6')"><img src="/projekt/gamecubetxt.png"
+          alt="gctxt "></button>
+      <button class="console-name" onclick="showConsoleInfo('console7')"><img src="/projekt/gbatxt.png"
+          alt="gbatxt"></button>
+    </div>
+    <div class="display-and-games">
+      <div class="console-display" id="consoleDisplay">
+      </div>
+      <div class="console-info" id="consoleInfo">
+      </div>
+      <div id="TVDisplay">
+      </div>
+      <div class="games-grid">
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <div class="footer-column">
+      <h3>Email Us</h3>
+      <p><a href="mailto:RetroFans@gmail.com">RetroFans@gmail.com</a></p>
+      <br>
+      <p>Response time is estimated up to 2 days</p>
+    </div>
+    <div class="footer-column">
+      <h3>Call Us</h3>
+      <p><a href="tel:+48123456789">Phone: +48 123 456 789</a></p>
+      <br>
+      <p>We are available 24/7 from Monday to Friday </p>
+    </div>
+    <div class="footer-column">
+      <h3>Cookies</h3>
+      <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
+    </div>
+  </footer>
+  <script>
+    /* 
+ * Consoles Data
+ * -----------------------------------------------------------------------------
+ */
+
+/* Data structure containing information about gaming consoles */
+const consolesData = {
+    'console1': {
+        name: 'NES',
+        /* Detailed information about the console */
+        info: 'The Nintendo Entertainment System (NES) is an 8-bit third-generation home video game ' +
+            'console that was developed and manufactured by Nintendo. It was initially released in Japan as the Family ' +
+            'Computer (Famicom) in 1983 and later introduced to the North American market in 1985. ' +
+            'The NES holds a special place in the hearts of many gamers and is remembered for its vast influence on the ' +
+            'gaming industry and the popularization of home video gaming. ' +
+            'Games were distributed on ROM cartridges, known colloquially as "Game Paks." ' +
+            'The NES game controller introduced a new design paradigm, featuring a D-pad, start, select, A, and B buttons. ' +
+            'It set the standard for future game controllers. ' +
+            'Game Library ' +
+            'The NES is known for launching some of the most iconic video game franchises, including "Super Mario Bros.," ' +
+            '"The Legend of Zelda," "Metroid," "Final Fantasy," and "Mega Man." ' +
+            'Over 800 officially licensed games were released for the NES, with a total library of over 1,000 when unlicensed ' +
+            'games are included. ' +
+            'Impact and Legacy ' +
+            'The NES is credited with revitalizing the video game industry in the United States after the crash of 1983. ' +
+            'Many of its games are considered classics and are still played today on various platforms, including through ',
+        /* List of games available on the console */
+        games: [
+            'Game 1A',
+            'Game 1B',
+            'Game 1C',
+            'Game 1D',
+            'Game 1E',
+            'Game 1F'
+        ],
+        /* Images associated with each game */
+        gamesImages: [
+            'mariones.jpg',
+            'zeldanes.png',
+            'contranes.jpg',
+            'duckhuntnes.jpg',
+            'bubblebooblenes.jpg',
+            'metroidnes.jpg'
+        ],
+        /* Videos associated with each game */
+        gamesVideos: {
+            'Game 1A': 'NesMarionagr.mp4',
+            'Game 1B': 'videoSource1B.mp4',
+            'Game 1C': 'videoSource1C.mp4',
+            'Game 1D': 'videoSource1D.mp4',
+            'Game 1E': 'videoSource1E.mp4',
+            'Game 1F': 'videoSource1F.mp4'
+        },
+        /* Image of the console */
+        image: 'nes.jpg',
+        /* Image of the TV displaying the console */
+        tvImage: 'TV111.png'
+    },
+    'console2': {
+        name: 'Game Boy',
+        /* Detailed information about the console */
+        info: 'The Game Boy is a handheld game console developed and manufactured by Nintendo. It was ' +
+            'first released in Japan on April 21, 1989, and later in North America and Europe. The Game Boy ' +
+            'is one of the world\'s best-selling game systems, selling over 118 million units worldwide. ' +
+            'Here are some key points about the Game Boy: ' +
+            'The Game Boy came with a monochrome screen but was later revised to have a color screen with the ' +
+            'release of the Game Boy Color. ' +
+            'It featured games on interchangeable cartridges, allowing players to switch games easily. ' +
+            'The Game Boy\'s compact size and the ability to play games on the go made it a significant innovation ' +
+            'in the gaming industry. ' +
+            'Notable games for the Game Boy include "Tetris," "Pokémon Red and Blue," "The Legend of Zelda: Link\'s ' +
+            'Awakening," and "Super Mario Land." ' +
+            'The Game Boy also supported multiplayer gaming through the use of a link cable, which allowed two ' +
+            'Game Boys to connect for competitive or cooperative play. ' +
+            'The Game Boy line includes several models, such as the Game Boy Pocket, Game Boy Light, and Game Boy Color. ' +
+            'The Game Boy remained popular throughout the 1990s until it was succeeded by the Game Boy Advance in 2001.',
+        /* List of games available on the console */
+        games: [
+            'Game 2A',
+            'Game 2B',
+            'Game 2C',
+            'Game 2D',
+            'Game 2E',
+            'Game 2F'
+        ],
+        /* Images associated with each game */
+        gamesImages: [
+            'tetrisgb.jpg',
+            'pokemonyellowGB.jpg',
+            'donkeykonggb.jpg',
+            'pacmangb.jpg',
+            'kirbygb.jpg',
+            'doubledragongb.jpg'
+        ],
+        /* Videos associated with each game */
+        gamesVideos: {
+            'Game 2A': 'videoSource2A.mp4',
+            'Game 2B': 'videoSource2B.mp4',
+            'Game 2C': 'videoSource2C.mp4',
+            'Game 2D': 'videoSource2D.mp4',
+            'Game 2E': 'videoSource2E.mp4',
+            'Game 2F': 'videoSource2F.mp4'
+        },
+        /* Image of the console */
+        image: 'Gameboy.jpg',
+        /* Image of the TV displaying the console */
+        tvImage: 'TV111.png'
+    },
+    'console3': {
+        name: 'SNES',
+        /* Detailed information about the console */
+        info: 'The Super Nintendo Entertainment System (SNES), also known as the Super Famicom in Japan, is a 16-bit home ' +
+            'video game console released by Nintendo in 1990 in Japan and South Korea, 1991 in North America, 1992 in Europe ' +
+            'and Australasia (Oceania), and 1993 in South America. As the successor to the Nintendo Entertainment System (NES), ' +
+            'the SNES was a major step forward in gaming technology and graphics capabilities. ' +
+            'Here are some significant details about the SNES: ' +
+            'The SNES introduced advanced graphics and sound capabilities compared with other systems at the time. ' +
+            'It featured Mode 7, which allowed a background layer to be rotated and scaled on a scanline-by-scanline basis ' +
+            'to create a 3D effect, giving rise to classic titles with unique visual styles. ' +
+            'The console came with a diverse library of games, including titles like "Super Mario World," "The Legend of Zelda: ' +
+            'A Link to the Past," "Super Metroid," "Street Fighter II," and "Donkey Kong Country," which are celebrated for ' +
+            'their gameplay and innovation. ' +
+            'The SNES was part of the 16-bit era of consoles, which competed primarily with Sega\'s Genesis console in a period ' +
+            'often referred to as the "console wars." ' +
+            'This era was known for the significant advancement in video game design and storytelling, and the SNES played a ' +
+            'vital role in shaping the gaming landscape of the early 90s. ' +
+            'The SNES continued to receive games well into the late 1990s and has since been re-released in various formats, ' +
+            'including the Super NES Classic Edition in 2017, which came preloaded with several iconic SNES games.',
+        /* List of games available on the console */
+        games: [
+            'Game 3A',
+            'Game 3B',
+            'Game 3C',
+            'Game 3D',
+            'Game 3E',
+            'Game 3F'
+        ],
+        /* Images associated with each game */
+        gamesImages: [
+            'marioworldsnes.png',
+            'mariokartsnes.jpg',
+            'superbomberman.png',
+            'harvestmoonsnes.png',
+            'castlevaniasnes.png',
+            'megamansnes.jpg'
+        ],
+        /* Videos associated with each game */
+        gamesVideos: {
+            'Game 3A': 'videoSource3A.mp4',
+            'Game 3B': 'videoSource3B.mp4',
+            'Game 3C': 'videoSource3C.mp4',
+            'Game 3D': 'videoSource3D.mp4',
+            'Game 3E': 'videoSource3E.mp4',
+            'Game 3F': 'videoSource3F.mp4'
+        },
+        /* Image of the console */
+        image: 'snes.jpg',
+        /* Image of the TV displaying the console */
+        tvImage: 'TV111.png'
+    },
+    'console4': {
+        name: 'Nintendo 64',
+        /* Detailed information about the console */
+        info: 'The Nintendo 64, commonly called the N64, was Nintendo\'s third home video game console for the ' +
+            'international market. Named for its 64-bit central processing unit, it was released in June 1996 in Japan, ' +
+            'September 1996 in North America, and March 1997 in Europe and Australia. It was the last major home console ' +
+            'to use cartridges as its primary storage format until Nintendo switch back to cartridges with the Switch ' +
+            'in 2017. Here are some key features and details about the Nintendo 64: ' +
+            'The N64 featured a unique three-handled controller design with an analog joystick that was influential for ' +
+            'future gamepads. ' +
+            'It was noted for its high-quality games across a variety of genres, including iconic titles such as "Super ' +
+            'Mario 64," "The Legend of Zelda: Ocarina of Time," "GoldenEye 007," "Mario Kart 64," and "Super Smash Bros." ' +
+            'The N64 supported up to four players simultaneously without the need for an additional accessory, making it ' +
+            'a popular console for multiplayer gaming. ' +
+            'It utilized a variety of enhancement and add-on chips embedded in cartridges to improve performance and ' +
+            'graphics, such as the Reality Coprocessor for advanced 3D graphics. ' +
+            'The Nintendo 64 sold approximately 32.93 million units worldwide, and its games are still celebrated for ' +
+            'their quality and innovation. ' +
+            'The N64 has a dedicated fan base, and its games continue to be played and enjoyed by fans around the world, ' +
+            'with some titles being re-released on later Nintendo platforms or through emulation.',
+        /* List of games available on the console */
+        games: [
+            'Game 4A',
+            'Game 4B',
+            'Game 4C',
+            'Game 4D',
+            'Game 4E',
+            'Game 4F'
+        ],
+        /* Images associated with each game */
+        gamesImages: [
+            'game-4A-image.png',
+            'game-4B-image.png',
+            'game-4C-image.png',
+            'game-4D-image.png',
+            'game-4E-image.png',
+            'game-4F-image.png'
+        ],
+        /* Videos associated with each game */
+        gamesVideos: {
+            'Game 4A': 'videoSource4A.mp4',
+            'Game 4B': 'videoSource4B.mp4',
+            'Game 4C': 'videoSource4C.mp4',
+            'Game 4D': 'videoSource4D.mp4',
+            'Game 4E': 'videoSource4E.mp4',
+            'Game 4F': 'videoSource4F.mp4'
+        },
+        /* Image of the console */
+        image: 'Nintendo64.jpg',
+        /* Image of the TV displaying the console */
+        tvImage: 'TV111.png'
+    },
+    'console5': {
+    name: 'Game Boy Color',
+    /* Detailed information about the console */
+    info: 'The Game Boy Color (GBC) is a handheld game console manufactured by Nintendo, which was released on October ' +
+      '21, 1998, in Japan and was released in November of the same year in international markets. It is the successor ' +
+      'to the original Game Boy and is part of the Game Boy family. The GBC features a color screen rather than ' +
+      'the monochrome display of its predecessor. Here are some key attributes and historical points about the ' +
+      'Game Boy Color: ' +
+      'The GBC has a color screen with a palette of up to 56 different colors displayed simultaneously from a ' +
+      'selection of 32,768 possible colors. ' +
+      'It was backward compatible with the vast library of the original Game Boy, allowing those games to be played ' +
+      'in a limited form of color. ' +
+      'The GBC’s color screen brought new life to existing games and enabled developers to create vibrant new ' +
+      'titles specifically designed for the system. ' +
+      'Some notable games released for the Game Boy Color include "The Legend of Zelda: Oracle of Ages," "The Legend ' +
+      'of Zelda: Oracle of Seasons," and "Pokémon Gold and Silver." ' +
+      'The GBC also supported infrared wireless linking for multiplayer gaming and data exchange with other GBC ' +
+      'systems, which was a novel feature at the time. ' +
+      'Despite the release of its successor, the Game Boy Advance, in 2001, the Game Boy Color continued to be ' +
+      'popular and supported until the early 2000s. ' +
+      'Its portability, combined with the rich library of games, ensured the Game Boy Color’s place as a memorable ' +
+      'and successful handheld gaming console in the history of video games.',
+    /* List of games available on the console */
+    games: [
+      'Game 5A',
+      'Game 5B',
+      'Game 5C',
+      'Game 5D',
+      'Game 5E',
+      'Game 5F'
+    ],
+    /* Images associated with each game */
+    gamesImages: [
+      'game-5A-image.png',
+      'game-5B-image.png',
+      'game-5C-image.png',
+      'game-5D-image.png',
+      'game-5E-image.png',
+      'game-5F-image.png'
+    ],
+    /* Videos associated with each game */
+    gamesVideos: {
+      'Game 5A': 'videoSource5A.mp4',
+      'Game 5B': 'videoSource5B.mp4',
+      'Game 5C': 'videoSource5C.mp4',
+      'Game 5D': 'videoSource5D.mp4',
+      'Game 5E': 'videoSource5E.mp4',
+      'Game 5F': 'videoSource5F.mp4'
+    },
+    /* Image of the console */
+    image: 'GameboyColor.jpg',
+    /* Image of the TV displaying the console */
+    tvImage: 'TV111.png'
+  },
+  'console6': {
+    name: 'Gamecube',
+    /* Detailed information about the console */
+    info: 'The Nintendo GameCube is a home video game console released by Nintendo in Japan and North America in 2001, ' +
+      'and in European and other territories in 2002. The GameCube is Nintendo’s fourth home video game console and ' +
+      'is part of the sixth generation of video game consoles. Here are some key points about the Nintendo GameCube: ' +
+      'The GameCube featured a unique cube-like design and used proprietary optical discs as its primary storage ' +
+      'medium. ' +
+      'The console introduced a variety of technological improvements over its predecessors, including enhanced ' +
+      'graphics capabilities and the use of the IBM PowerPC processor. ' +
+      'It supported connectivity with the Game Boy Advance, allowing players to use the handheld as a second screen ' +
+      'or controller for GameCube games. ' +
+      'The system’s controller design has been praised for its comfort and functionality, particularly the L and R ' +
+      'triggers and the ergonomic placement of buttons. ' +
+      'Some of the most popular and critically acclaimed games on the GameCube include "Super Smash Bros. Melee," ' +
+      '"The Legend of Zelda: The Wind Waker," "Metroid Prime," and "Resident Evil 4." ' +
+      'The GameCube competed with Sony’s PlayStation 2 and Microsoft’s Xbox, focusing on gaming rather than the ' +
+      'multimedia functionality of its competitors. ' +
+      'Despite having lower sales compared to its main competitors, the GameCube was beloved by many for its robust ' +
+      'game library and distinctive design and is considered to have a legacy of innovation and quality titles.',
+    /* List of games available on the console */
+    games: [
+      'Game 6A',
+      'Game 6B',
+      'Game 6C',
+      'Game 6D',
+      'Game 6E',
+      'Game 6F'
+    ],
+    /* Images associated with each game */
+    gamesImages: [
+      'game-6A-image.png',
+      'game-6B-image.png',
+      'game-6C-image.png',
+      'game-6D-image.png',
+      'game-6E-image.png',
+      'game-6F-image.png'
+    ],
+    /* Videos associated with each game */
+    gamesVideos: {
+      'Game 6A': 'videoSource6A.mp4',
+      'Game 6B': 'videoSource6B.mp4',
+      'Game 6C': 'videoSource6C.mp4',
+      'Game 6D': 'videoSource6D.mp4',
+      'Game 6E': 'videoSource6E.mp4',
+      'Game 6F': 'videoSource6F.mp4'
+    },
+    /* Image of the console */
+    image: 'Gamecube.jpg',
+    /* Image of the TV displaying the console */
+    tvImage: 'TV111.png'
+  },
+  'console7': {
+    name: 'Game Boy Advance',
+    /* Detailed information about the console */
+    info: 'The Game Boy Advance (GBA) is a 32-bit handheld game console developed, manufactured, and marketed by Nintendo ' +
+      'as the successor to the Game Boy Color. It was released in Japan on March 21, 2001, in North America on June 11, ' +
+      '2001, in Australia and Europe on June 22, 2001, and in mainland China on June 8, 2004 as iQue Game Boy Advance. ' +
+      'The GBA is part of the sixth generation of video game consoles. Some notable aspects of the Game Boy Advance include: ' +
+      'The GBA featured improved graphics and processing power over its predecessor, allowing for more complex and ' +
+      'visually engaging games. ' +
+      'It had a landscape form factor and came with a larger screen and better ergonomics for extended play sessions. ' +
+      'The console maintained backward compatibility with previous Game Boy and Game Boy Color games, ensuring a ' +
+      'vast library of games right from the launch. ' +
+      'Noteworthy games for the GBA include "Pokémon Ruby and Sapphire," "Advance Wars," "Metroid Fusion," and ' +
+      '"The Legend of',
+    /* List of games available on the console */
+    games: [
+      'Game 7A',
+      'Game 7B',
+      'Game 7C',
+      'Game 7D',
+      'Game 7E',
+      'Game 7F'
+    ],
+    /* Images associated with each game */
+    gamesImages: [
+      'game-7A-image.png',
+      'game-7B-image.png',
+      'game-7C-image.png',
+      'game-7D-image.png',
+      'game-7E-image.png',
+      'game-7F-image.png'
+    ],
+    /* Videos associated with each game */
+    gamesVideos: {
+      'Game 7A': 'videoSource7A.mp4',
+      'Game 7B': 'videoSource7B.mp4',
+      'Game 7C': 'videoSource7C.mp4',
+      'Game 7D': 'videoSource7D.mp4',
+      'Game 7E': 'videoSource7E.mp4',
+      'Game 7F': 'videoSource7F.mp4'
+    },
+    /* Image of the console */
+    image: 'GameboyAdvance.jpg',
+    /* Image of the TV displaying the console */
+    tvImage: 'TV111.png'
+  }
+};
+  </script>
+  <script src="consoles.js"></script>
+  <script src="cookies.js"></script>
+</body>
+
+</html>

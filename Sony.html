@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sony</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cookie.css">
+  <link rel="stylesheet" href="consoles.css">
+  <style>
+    .grid-container::after {
+      background-image: url('/projekt/psicons.png');
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="cookieConsentPopup" class="cookie-consent-popup" style="display: none;">
+  <div class="cookie-popup-content">
+      <p>This website uses cookies to provide a better quality of services. Do you agree to their use?</p>
+      <button id="acceptCookies">I agree</button>
+      <button id="declineCookies">I disagree</button>
+  </div>
+</div>
+
+  <section id="menus">
+    <header>
+      <nav id="mainnav">
+        <img id="mainIcon" src="/projekt/6170787.png" alt="mainIcon">
+        <ul class="menu">
+          <li>
+            <a href="LabStronka.html">Home</a>
+          </li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <aside>
+
+      <img id="rightarrow" src="/projekt/rightarrow.png" alt="rightarrow">
+      <input type="checkbox" id="btnControl" />
+      <label class="btn" for="btnControl"><img id="leftarrow" src="/projekt/leftarrow.png" alt="leftarrow"></label>
+      <div id="sideMenu">
+        <ul>
+          <li class="has-submenu">
+            <a href="#">Producents</a>
+            <ul class="submenu">
+              <li><a href="/projekt/Producentsinfo.html">Informations</a></li>
+              <li><a href="/projekt/Producents.html">Consoles/Computers</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu">
+            <a href="#">Emulation</a>
+            <ul class="submenu">
+              <li><a href="#">Informations</a></li>
+              <li><a href="#">Emulators</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Speedruns</a></li>
+          <li><a href="/projekt/Form.html">Form</a></li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+  <main id="carsize">
+    <h1>Sony</h1>
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="/projekt/pss1.jpg" alt="ps1ctr" id="nescon"> <br>
+        Market Impact and Innovation <br>
+Sony has been a major player in the video game console market since the introduction of its original PlayStation in 1994. The PlayStation brand revolutionized the home entertainment industry, bringing cutting-edge technology and a wide array of games to living rooms worldwide. The PlayStation 2, released in 2000, became the best-selling console of all time, showcasing Sony's dominance in the market. Sony's consoles have consistently pushed the boundaries of gaming, with each new generation introducing innovations in graphics, gameplay, and multimedia capabilities.
+</div>
+
+      <div class="grid-item">
+        Expansive Game Libraries and Franchises <br>
+One of the hallmarks of Sony's consoles is their expansive game libraries, which feature a diverse range of genres catering to all types of gamers. Sony consoles have been home to many iconic franchises such as "Final Fantasy," "Metal Gear Solid," and "Gran Turismo." These franchises not only defined their respective genres but also helped to establish Sony's PlayStation as the platform of choice for gamers. Sony has also encouraged the development of new intellectual properties, ensuring a constant stream of fresh and engaging content for its audience.
+ </div>
+      <div class="grid-item">Community and Online Services <br>
+        Sony has built a strong community around its PlayStation Network (PSN), which provides online services such as multiplayer gaming, digital media, and a marketplace for digital content. With the advent of PlayStation Plus, subscribers receive a selection of free games each month, along with access to exclusive discounts and cloud storage for game saves. As the online component of gaming becomes increasingly important, Sony continues to enhance its online offerings to improve the connected gaming experience for players around the globe.
+    </div>
+    </div>
+    <h2>Choose one option</h2>
+    
+    <div class="console-options">
+      <button class="console-name" onclick="showConsoleInfo('console1')"><img src="/projekt/ps1txt.png"
+          alt="nestxt"></button>
+      <button class="console-name" onclick="showConsoleInfo('console2')"><img src="/projekt/ps2txt.png"
+          alt="gbtxt"></button>
+    </div>
+    
+    <div class="display-and-games">
+      
+      <div class="console-display" id="consoleDisplay">
+        
+      </div>
+      
+      <div class="console-info" id="consoleInfo">
+        
+      </div>
+      <div id="TVDisplay">
+        
+      </div>
+      
+      <div class="games-grid">
+        
+        
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <div class="footer-column">
+      <h3>Email Us</h3>
+      <p><a href="mailto:RetroFans@gmail.com">RetroFans@gmail.com</a></p>
+      <br>
+      <p>Response time is estimated up to 2 days</p>
+    </div>
+    <div class="footer-column">
+      <h3>Call Us</h3>
+      <p><a href="tel:+48123456789">Phone: +48 123 456 789</a></p>
+      <br>
+      <p>We are available 24/7 from Monday to Friday </p>
+    </div>
+    <div class="footer-column">
+      <h3>Cookies</h3>
+      <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
+    </div>
+  </footer>
+  <script>
+ /* 
+ * Console Data
+ * -----------------------------------------------------------------------------
+ */
+
+/* Data structure containing information about gaming consoles */
+const consolesData = {
+    'console1': {
+        name: 'PlayStation 1',
+        /* Detailed information about the console */
+        info: 'The Sony PlayStation, also known as the PS1 or simply the PlayStation, is a fifth-generation home video game console released by Sony in 1994. ' +
+          'As Sony’s first foray into the console market, the PlayStation quickly became a dominant force, widely credited with helping to transition the industry ' +
+          'to the 3D gaming era. The PlayStation was the first computer entertainment platform to ship over 100 million units, thanks to its powerful hardware, ' +
+          'affordable pricing, and extensive library of games. ' +
+          'It introduced a CD-ROM format that allowed for larger game sizes, better sound quality, and full-motion video, setting a new standard for game production. ' +
+          'The console’s innovative controller design with a directional pad, four face buttons, and shoulder buttons became iconic. ' +
+          'The PlayStation boasted a broad range of games, including genre-defining titles such as "Final Fantasy VII," "Metal Gear Solid," and "Resident Evil," ' +
+          'which have inspired numerous sequels and adaptations. ' +
+          'The PlayStation’s success established Sony as a major player in the gaming industry and laid the foundation for the PlayStation brand as future iterations. ' +
+          'Its impact on gaming culture is profound, with the original PlayStation being remembered fondly for its role in shaping modern gaming trends and experiences.',
+        /* List of games available on the console */
+        games: ['Game 1A', 'Game 1B', 'Game 1C', 'Game 1D', 'Game 1E', 'Game 1F'],
+        /* Images associated with each game */
+        gamesImages: ['crashps1.png', 'tombraiderps1.jpg', 'soulreaverps1.jpg', 'spyrops1.png', 'metalgearsps1.jpg', 'xenogearsps1.jpg'],
+        /* Videos associated with each game */
+        gamesVideos: {
+            'Game 1A': 'sonicmaster.mp4',
+            'Game 1B': 'videoSource1B.mp4',
+            'Game 1C': 'videoSource1C.mp4',
+            'Game 1D': 'videoSource1D.mp4',
+            'Game 1E': 'videoSource1E.mp4',
+            'Game 1F': 'videoSource1F.mp4'
+        },
+        /* Image of the console */
+        image: 'SonyPlaystation1.png',
+        /* Image of the TV displaying the console */
+        tvImage: 'TV111.png'
+    },
+    'console2': {
+        name: 'PlayStation 2',
+        /* Detailed information about the console */
+        info: 'The Sony PlayStation 2 (PS2) stands as a titan in the history of gaming consoles, having been introduced to the market in 2000 ' +
+          'as the successor to the original PlayStation. It garnered immense popularity, becoming the best-selling video game console in history, ' +
+          'with over 155 million units sold worldwide. The PS2 set new benchmarks in the industry with its cutting-edge hardware, ' +
+          'including the innovative Emotion Engine CPU which was capable of pushing the boundaries of 3D graphics and gameplay realism at the time. ' +
+          'This technological prowess allowed for an array of game genres to flourish, from action-packed adventures to complex role-playing games. ' +
+          '\n\n' +
+          'The PS2 vast game library was one of its most compelling features, offering an unprecedented selection that catered to every type of gamer. ' +
+          'It was home to a multitude of games that have since become legendary, including the "Final Fantasy" series, "Metal Gear Solid 2: Sons of Liberty", ' +
+          '"Gran Turismo 3: A-Spec", and innovative titles like "Ico". The console also gave rise to new franchises like "God of War" and "Kingdom Hearts", ' +
+          'which have continued to receive critical acclaim to this day. ' +
+          '\n\n' +
+          'Sony commitment to backward compatibility was another key factor in the PS2 success, as it allowed gamers to play their beloved original PlayStation games on the new console. ' +
+          'Additionally, the PS2 integration of DVD playback functionality effectively made it a two-in-one entertainment system, which was a significant selling point at the time when DVD players were still relatively high-end consumer electronics. ' +
+          '\n\n' +
+          'The PS2 influence extended beyond gaming, as it played a pivotal role in the adoption of DVD technology and the evolution of home entertainment systems. ' +
+          'It also continued to receive support from developers long after its successors, the PlayStation 3 and PlayStation 4, were released, with new games being produced up until 2013. ' +
+          'The console longevity and enduring popularity are testaments to its impact on the gaming industry and its ability to connect with multiple generations of players. ' +
+          'Even today, the PS2 is celebrated for its contribution to the world of gaming, with many of its titles being remastered for current platforms or inspiring modern game development.',
+          /* List of games available on the console */
+        games: ['Game 2A', 'Game 2B', 'Game 2C', 'Game 2D', 'Game 2E', 'Game 2F'],
+        /* Images associated with each game */
+        gamesImages: ['persona4ps2.jpg', 'silenthill3ps2.jpg', 'shadowofthecollosusps2.jpg', 'tekken5ps2.jpg', 'mostwantedps2.jpg', 'tonyhawk3ps2.jpg'],
+        /* Videos associated with each game */
+        gamesVideos: {
+            'Game 2A': 'videoSource2A.mp4',
+            'Game 2B': 'videoSource2B.mp4',
+            'Game 2C': 'videoSource2C.mp4',
+            'Game 2D': 'videoSource2D.mp4',
+            'Game 2E': 'videoSource2E.mp4',
+            'Game 2F': 'videoSource2F.mp4'
+        },
+        /* Image of the console */
+        image: 'SonyPlaystation2.jpg',
+        /* Image of the TV displaying the console */
+        tvImage: 'TV111.png'
+    }
+};
+</script>
+<script src="consoles.js"></script>
+<script src="cookies.js"></script>
+</body>
+
+</html>

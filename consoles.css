@@ -1,0 +1,440 @@
+/**
+ * General styling for the entire page
+ * -----------------------------------------------------------------------------
+ */
+
+/* Resetting margin and setting 100% height for html and body elements */
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+/* Creating a pseudo-element to adjust body spacing */
+body::after {
+  content: '';
+  display: block;
+  height: 0px;
+}
+
+/* Setting up a grid layout for the body with specified rows and areas */
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "section" "main" "footer";
+  grid-template-rows: 30px 3fr 80px;
+}
+
+/* Media query for smaller screens, adjusting grid layout */
+@media (max-width: 800px) {
+  body {
+      grid-template-rows: 75px 3fr 80px;
+  }
+}
+
+/* Media query for even smaller screens, further adjusting grid layout */
+@media (max-width: 576px) {
+  body {
+      grid-template-rows: 170px 3fr 80px;
+  }
+}
+
+/**
+* Styling for the section, main, and footer areas
+* -----------------------------------------------------------------------------
+*/
+
+/* Styling for the 'section' area */
+#menus {
+  grid-area: section;
+}
+
+/* Styling for the 'main' area */
+main {
+  grid-area: main;
+}
+
+/* Styling for the footer area */
+footer {
+  background-color: #7E57C2;
+  grid-area: footer;
+  width: 100%;
+  background-color: #333;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Styling for individual columns within the footer */
+footer .footer-column {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  flex: 1;
+  align-self: flex-start;
+}
+
+/* Styling for paragraph elements within the footer columns */
+footer .footer-column p {
+  width: 90%;
+  margin: 5px 0;
+}
+
+/* Styling for anchor (link) elements within the footer */
+footer a {
+  width: 90%;
+  color: rgb(165, 165, 165);
+  text-decoration: none;
+}
+
+/* Styling for hover effect on anchor elements */
+footer a:hover {
+  color: white;
+}
+
+/**
+* Styling for the grid container and its items
+* -----------------------------------------------------------------------------
+*/
+
+/* Styling for the overall grid container */
+.grid-container {
+  border-color: #333;
+  border: #333 solid;
+  position: relative;
+  margin: 8px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Pseudo-element for a background image in the grid container */
+.grid-container::after {
+  content: '';
+  background-size: contain; 
+  width: 100%;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Styling for the first grid item, spanning 2 rows */
+.grid-item:nth-child(1) {
+  grid-row: 1 / span 2;
+}
+
+/* Styling for individual grid items */
+.grid-item {
+  background-color: rgba(74, 71, 71, 0.8);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styling for specific element with id 'carsize' */
+#carsize {
+  width: 70%;
+  margin: auto;
+}
+
+/* Styling for a specific element with id 'nescon' */
+#nescon {
+  width: 200px;
+}
+
+/* Media query for smaller screens, adjusting 'carsize' width */
+@media (max-width: 800px) {
+  #carsize {
+      width: 100%;
+  }
+
+  /* Adjusting grid layout for smaller screens */
+  .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+  }
+
+  /* Adjusting position of the third grid item for smaller screens */
+  .grid-item:nth-child(3) {
+      grid-row: auto;
+  }
+}
+
+/**
+* Styling for console information, options, and related elements
+* -----------------------------------------------------------------------------
+*/
+
+/* Styling for the container of console information and options */
+.console-info {
+  grid-column: 2;
+}
+
+/* Styling for the console options container */
+.console-options {
+  background-color: #333;
+  display: grid;
+  gap: 10px;
+  border-radius: 11%;
+  width: 440px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Styling for individual console names within the options */
+.console-name {
+  margin: 10px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Removing default focus outline for console names */
+.console-name:focus {
+  outline: none;
+}
+
+/* Styling for images within console names */
+.console-name img {
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Styling for hover effect on console names */
+.console-name:hover {
+  background-color: #585757;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Styling for focus effect on console names */
+.console-name:focus {
+  background-color: #1a1a1a;
+  border-bottom: green 2px solid;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+/**
+* Styling for the display and games section
+* -----------------------------------------------------------------------------
+*/
+
+/* Styling for the overall container with display and games */
+.display-and-games {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 20px;
+}
+
+/* Styling for the container of console display */
+.console-display {
+  width: 440px;
+  display: grid;
+}
+
+/* Styling for the console image within the display */
+.console-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styling for images within the console image */
+.console-image img {
+  border-radius: 5%;
+  max-width: 100%;
+  height: 400px;
+  display: block;
+}
+
+/* Styling for the overall games grid container */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Styling for individual game items within the grid */
+.game {
+  padding: 10px;
+}
+
+/**
+* Styling for various elements related to console visuals
+* -----------------------------------------------------------------------------
+*/
+
+/* Styling for the main console image in the display */
+.console-main-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Styling for the container of game images */
+.game-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 10px;
+}
+
+/* Styling for individual game images */
+.game-img {
+  width: 160px;
+  height: 230px;
+  object-fit: fill;
+}
+
+/* Styling for the container of TV-related elements */
+.console-tv-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for the TV image within the TV container */
+.tv-image {
+  width: 430px;
+  height: 407px;
+  display: block;
+  z-index: 1;
+}
+
+/* Styling for the video wrapper within the TV container */
+.video-wrapper {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Styling for the console video element */
+.console-video {
+  width: 313px;
+  height: auto;
+  z-index: 0;
+}
+
+/* Media query for smaller screens, adjusting layout and styling */
+@media (max-width: 1340px) {
+  .display-and-games {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+      text-align: center;
+  }
+
+  /* Adjusting games grid for smaller screens */
+  .games-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Adjusting console info styling */
+  .console-info {
+      text-align: left;
+      background-color: #333;
+  }
+}
+
+/* Media query for even smaller screens, further adjusting layout and styling */
+@media (max-width: 1110px) {
+  /* Adjusting console display width and centering it */
+  .console-display {
+      width: 400px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto;
+  }
+
+  /* Centering text within h2 elements */
+  h2 {
+      text-align: center;
+  }
+
+  /* Adjusting font size of grid items */
+  .grid-item {
+      font-size: large;
+  }
+
+  /* Adjusting console info styling and position */
+  .console-info {
+      text-align: center;
+      font-size: large;
+      grid-column: 1;
+  }
+
+  /* Adjusting console options layout and styling */
+  .console-options {
+      border-radius: 3%;
+      grid-template-columns: repeat(2, 1fr);
+      margin: auto;
+      margin-bottom: 10px;
+  }
+
+  /* Adjusting console name image width */
+  .console-name img {
+      width: 110px;
+  }
+
+  /* Adjusting TV image dimensions */
+  .tv-image {
+      width: 410px;
+      height: 390px;
+  }
+
+  /* Further adjustments to video wrapper position */
+  .video-wrapper {
+      top: 56%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  /* Further adjustments to console video width */
+  .console-video {
+      width: 300px;
+  }
+}
+/* Add this to your existing CSS */
+.game-img {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.game-img:hover {
+  animation: shake 0.5s ease-in-out infinite, enlarge 0.5s ease-in-out;
+  box-shadow: 0 10px 90px rgba(246, 4, 4, 0.3);
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-3px, -3px);
+  }
+  50% {
+    transform: translate(3px, 3px);
+  }
+  75% {
+    transform: translate(-3px, 3px);
+  }
+  100% {
+    transform: translate(3px, -3px);
+  }
+}
+
+@keyframes enlarge {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}

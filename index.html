@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Retro Gaming Haven - Your Gateway to Classic Gaming">
+    <meta property="og:description" content="Explore Nintendo, Microsoft, Sony, Sega and Commodore classic consoles, read insightful articles, and join our passionate gaming community.">
+    <meta property="og:url" content="http://Retroconsoles.com">
+    <meta property="og:image" content="http://Retroconsoles.com/projekt/6170787.png">    <link rel="icon" type="image/png" href="/projekt/6170787.png">
+    <title>Retro Gaming Haven - Your Gateway to Classic Gaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cookie.css">
+    <style>
+          @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spin2 {
+    from {
+      transform: rotate(45deg);
+    }
+    to {
+      transform: rotate(405deg);
+    }
+  }
+  @keyframes spin3 {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(450deg);
+    }
+  }
+  @keyframes spin4 {
+    from {
+      transform: rotate(135deg);
+    }
+    to {
+      transform: rotate(495deg);
+    }
+  }
+  @keyframes spin5 {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+@keyframes spin6 {
+  from {
+    transform: rotate(225deg);
+  }
+  to {
+    transform: rotate(585deg);
+  }
+}
+@keyframes spin7 {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+@keyframes spin8 {
+  from {
+    transform: rotate(315deg);
+  }
+  to {
+    transform: rotate(675deg);
+  }
+}
+
+
+.center-text2 {
+    overflow: hidden;
+    visibility: hidden;
+    margin-top: 300px;
+    margin-bottom: 350px;
+   
+  }
+
+  .center-text {
+    position: absolute;
+    top: 700px; /* Change this to 50% */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 325px;
+    height: 325px;
+    border-radius: 50%;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    z-index: 1;
+}
+
+.surrounding-image img {
+    position: absolute;
+    width: 150px;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    border-radius: 50%;
+    top: 850px; /* Change this to 50% */
+    left: 50%;
+    transform-origin: 0 -150px;
+    z-index: 2;
+}
+
+@media (max-width: 900px) {
+    .center-text2 {
+        margin-bottom: 150px;
+    }
+    .center-text {
+        padding: 1px;
+        top: 595px;
+        font-size: 16px;
+        width: 190px;
+        height: 190px;
+    }
+
+    .surrounding-image img {
+        top: 680px;
+        width: 100px;
+        height: 100px;
+        transform-origin: 0 -85px;
+    }
+}
+
+
+  .surrounding-image:nth-child(8) img { animation: spin 30s linear infinite;}
+  .surrounding-image:nth-child(9) img { animation: spin2 30s linear infinite;}
+  .surrounding-image:nth-child(10) img { animation: spin3 30s linear infinite;}
+  .surrounding-image:nth-child(11) img { animation: spin4 30s linear infinite;}
+  .surrounding-image:nth-child(12) img { animation: spin5 30s linear infinite;}
+  .surrounding-image:nth-child(13) img { animation: spin6 30s linear infinite;}
+  .surrounding-image:nth-child(14) img { animation: spin7 30s linear infinite;}
+  .surrounding-image:nth-child(15) img { animation: spin8 30s linear infinite;}
+
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+  <div id="cookieConsentPopup" class="cookie-consent-popup" style="display: none;">
+    <div class="cookie-popup-content">
+        <p>This website uses cookies to provide a better quality of services. Do you agree to their use?</p>
+        <button id="acceptCookies">I agree</button>
+        <button id="declineCookies">I disagree</button>
+    </div>
+</div>
+
+<header>
+    <nav id="mainnav">
+        <img id="mainIcon" src="/projekt/6170787.png" alt="mainIcon">
+        <ul class="menu">
+        <li>
+            <a href="LabStronka.html">Home</a>
+        </li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<aside>
+
+    <img id ="rightarrow" src="/projekt/rightarrow.png" alt="rightarrow">
+    <input type="checkbox" id="btnControl"/>
+    <label class="btn" for="btnControl"><img id ="leftarrow" src="/projekt/leftarrow.png" alt="leftarrow"></label>
+    <div id="sideMenu">
+        <ul>
+            <li class="has-submenu">
+                <a href="#">Producents</a>
+                <ul class="submenu">
+                    <li><a href="/projekt/Producentsinfo.html">Informations</a></li>
+                    <li><a href="/projekt/Producents.html">Consoles/Computers</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Emulation</a>
+                <ul class="submenu">
+                    <li><a href="#">Informations</a></li>
+                    <li><a href="#">Emulators</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Speedruns</a></li>
+            <li><a href="/projekt/Form.html">Form</a></li>
+        </ul>
+    </div>
+</aside>
+<section>
+    <div class="slideshow">
+        <div class="slide" style="background-image: url('/projekt/ps1.jpg');"></div>
+        <div class="slide" style="background-image: url('/projekt/gbcol.jpeg');"></div>
+        <div class="slide" style="background-image: url('/projekt/segaMD.png');"></div>
+      </div>
+</section>
+<h1>Retro Gaming Haven!</h1>
+<div class="center-text2"></div>
+<div class="center-text">Graphics evolution of Mario games starting with Super Mario and ending with Super Mario oddyssey!</div>
+<div class="surrounding-image"> <img src="/projekt/Mario1nes.jpg" alt="mario1"></div>
+<div class="surrounding-image"> <img src="/projekt/mario2.jpg" alt="mario2"></div>
+<div class="surrounding-image"> <img src="/projekt/Mario3.jpg" alt="mario3"></div>
+<div class="surrounding-image"> <img src="/projekt/Mario4.png " alt="marioworld"></div>
+<div class="surrounding-image"><img src="/projekt/mario64.jpg" alt="mario64"></div>
+<div class="surrounding-image"><img src="/projekt/mario6.jpg" alt="mariosunshine"></div>
+<div class="surrounding-image"> <img src="/projekt/mario7.jpg" alt="mariogalaxy"></div>
+<div class="surrounding-image"><img src="/projekt/mario8.jpg" alt="mariooddyssey"></div>
+
+<main id="main">
+        <section>
+        <div class="row">
+            <div class="column">
+                <h2>Step into a world of nostalgia and pixelated adventures with our treasure trove of retro consoles! From the clunky joysticks of the Commodore to the iconic gray cartridges of the NES, we celebrate the golden age of gaming.</h2>
+                <h2>Rediscover the origins of video gaming with systems that paved the way for today's high-definition experiences. Our carefully curated selection includes the classic consoles that defined generations, including the Sega Genesis, Super Nintendo, and the Game Boy.</h2>
+            </div>
+            <div class="column">
+                <div>Whether you're reliving cherished childhood memories or experiencing these timeless classics for the first time, our collection of retro consoles is sure to transport you back to the days when gameplay was king and graphics were a novel delight.</div>
+                <div>Embrace the simplicity of 8-bit graphics, chiptune melodies, and the sheer joy of blowing into a cartridge to get it working. Start your retro journey today and reconnect with the roots of the gaming culture!</div>
+            </div>
+        </div>
+    </section>
+    <h2>Who we are?</h2>
+    <section id="about">
+        <div>We are group of fans dedicated to retro gaming. We created this website to serve as a comprehensive resource for anyone interested in the golden era of video games. The website aims to provide visitors with insightful articles, detailed guides, and the latest news related to retro gaming and emulation.
+
+Features of the website include:
+
+Game Database: A curated list of classic games complete with descriptions, release information, and platform availability.
+Emulator Guides: Step-by-step tutorials on how to set up and use various emulators to play retro games on modern hardware.
+Community Forum: A space for members to discuss their favorite games, share tips, and support each other's retro gaming endeavors.
+Events Calendar: Information on upcoming retro gaming conventions, tournaments, and meet-ups.
+Reviews and Ratings: In-depth analyses of retro games and hardware, along with user-submitted ratings.
+Compatibility Lists: Resources to help users understand which games run on which emulators and any potential issues they might encounter.
+By building this website, the group hopes to preserve the nostalgia and joy that retro games bring, making it easier for newcomers and veterans alike to explore the vast universe of retro gaming and emulation. We creating a website to serve as a comprehensive resource for anyone interested in the golden era of video games. The website aims to provide visitors with insightful articles, detailed guides, and the latest news related to retro gaming and emulation.</div>
+    </section>
+    <div id="hiddenFormData">
+      <h2>Stored Form Data</h2>
+      <p id="storedName"></p>
+      <p id="storedSurname"></p>
+      <p id="storedEmail"></p>
+      <p id="storedPhone"></p>
+  </div>
+</main>
+
+<footer id="contact">
+    <div class="footer-column">
+        <h3>Email Us</h3>
+        <p><a href="mailto:RetroFans@gmail.com">RetroFans@gmail.com</a></p>
+        <br>
+        <p>Response time is estimated up to 2 days</p>
+    </div>
+    <div class="footer-column">
+        <h3>Call Us</h3>
+        <p><a href="tel:+48123456789">Phone: +48 123 456 789</a></p>
+        <br>
+        <p>We are available 24/7 from Monday to Friday </p>
+    </div>
+    <div class="footer-column">
+        <h3>Cookies</h3>
+        <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
+    </div>
+</footer>
+<script></script>
+<script src="labstronka.js"></script>
+<script src="cookies.js"></script>
+</body>
+</html>

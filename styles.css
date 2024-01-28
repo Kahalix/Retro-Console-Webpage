@@ -1,0 +1,514 @@
+/**
+ * Base Styles
+ * -----------------------------------------------------------------------------
+ */
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(24, 26, 26);
+  color: white;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  margin-top: 50px;
+  position: relative;
+}
+
+/* Body pseudo-element styles */
+body::after {
+  content: '';
+  display: block;
+  height: 200px;
+}
+
+/* Main icon styles */
+#mainIcon {
+  float: left;
+  width: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0px;
+}
+
+/* Main navigation styles */
+#mainnav {
+  width: 100%;
+  position: fixed;
+  background-color: #390ca1;
+  top: 0;
+  z-index: 5;
+}
+
+/* Menu styles */
+.menu {
+  list-style-type: none;
+  margin: auto;
+  float: right;
+  padding: 0;
+  overflow: hidden;
+  width: 50%;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+/* Menu list item styles */
+.menu li {
+  position: relative;
+  width: 25%;
+  background-color: #333;
+  flex: 1 1 auto;
+}
+
+/* Menu anchor styles */
+.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Menu anchor hover styles */
+.menu li a:hover {
+  background-color: #111;
+}
+
+/* Right and left arrow button styles */
+#rightarrow, #leftarrow {
+  width: 40px;
+  position: fixed;
+  top: 0;
+  left: 45px;
+  margin: 6px;
+  border-radius: 50%;
+  background-color: black;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Checkbox control styles */
+#btnControl {
+  display: none;
+}
+
+/* Left arrow styles */
+#leftarrow {
+  opacity: 1;
+}
+
+/* Right arrow visibility styles */
+#btnControl:not(:checked) ~ label > #rightarrow {
+  opacity: 0;
+}
+
+/* Left arrow visibility styles */
+#btnControl:checked ~ label > #leftarrow {
+  opacity: 0;
+}
+
+/* Right arrow visibility styles when checked */
+#btnControl:checked ~ label > #rightarrow {
+  opacity: 1;
+}
+
+/* Side menu styles */
+#sideMenu {
+  transition: left 0.3s ease-in-out;
+  width: 200px;
+  background-color: rgba(51, 51, 51, 0.8);
+  position: fixed;
+  top: 46px;
+  left: 0px;
+  height: 100%;
+  color: white;
+  z-index: 10;
+}
+
+/* Side menu ul styles */
+#sideMenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Side menu ul li styles */
+#sideMenu ul li {
+  position: relative;
+}
+
+/* Side menu anchor styles */
+#sideMenu ul li a {
+  display: block;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+/* Side menu anchor hover styles */
+#sideMenu ul li a:hover {
+  background-color: #555;
+}
+
+/* Submenu styles */
+.has-submenu .submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: rgba(51, 51, 51, 0.8);
+  border-left: 1px solid #555;
+  min-width: 120px;
+  z-index: 10000;
+}
+
+/* Submenu visibility on hover */
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Submenu list item anchor styles */
+.submenu li a {
+  border-bottom: 1px solid #555;
+}
+
+/* Submenu list item anchor hover styles */
+.submenu li a:hover {
+  background-color: #666;
+}
+
+/* Submenu arrow indicator styles */
+.has-submenu > a::after {
+  content: '▶';
+  position: absolute;
+  left: 100px;
+  top: 9px;
+  transition: left 0.8s, transform 1.3s;
+}
+
+/* Submenu arrow indicator styles on hover */
+.has-submenu:hover > a::after {
+  left: 185px;
+  transform: rotate(90deg);
+}
+
+/* Side menu visibility on checkbox checked */
+#btnControl:checked ~ #sideMenu {
+  left: -250px;
+}
+
+/* Header 1 styles */
+h1 {
+  text-align: center;
+}
+
+/**
+* Main Section Styles
+* -----------------------------------------------------------------------------
+*/
+
+/* Main section styles */
+#main {
+  margin: auto;
+  width: 50%;
+}
+
+/* Header 1 within main section styles */
+#main h1 {
+  text-align: center;
+}
+
+/* Row styles */
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Column styles */
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column header 2 and div styles */
+.column h2, .column div {
+  background-color: #444;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+/* First child column styles */
+.column:first-child {
+  flex-direction: column;
+}
+
+/* Last child column styles */
+.column:last-child {
+  flex-direction: column;
+}
+
+/* Media query for max-width: 896px */
+@media (max-width: 896px) {
+  /* Row styles when max-width is 896px */
+  .row {
+      flex-direction: column;
+  }
+
+  /* Column styles when max-width is 896px */
+  .column {
+      width: 100%;
+  }
+
+  /* Column header 2 and div styles when max-width is 896px */
+  .column h2, .column div {
+      margin: 10px 0;
+  }
+}
+
+/**
+* Contact Section Styles
+* -----------------------------------------------------------------------------
+*/
+
+/* Contact section styles */
+#contact {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Footer column styles */
+#contact .footer-column {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  flex: 1;
+  align-self: flex-start;
+}
+
+/* Footer column paragraph styles */
+#contact .footer-column p {
+  width: 90%;
+  margin: 5px 0;
+}
+
+/* Footer anchor styles */
+#contact a {
+  width: 90%;
+  color: rgb(165, 165, 165);
+  text-decoration: none;
+}
+
+/* Footer anchor hover styles */
+#contact a:hover {
+  color: white;
+}
+
+/* Media query for max-width: 896px in contact section */
+@media (max-width: 896px) {
+  /* Main section styles when max-width is 896px */
+  #main {
+      width: 100%;
+  }
+
+  /* Side menu styles when max-width is 896px */
+  #sideMenu {
+      top: 90px;
+  }
+
+  /* Body styles when max-width is 896px */
+  body {
+      margin-top: 95px;
+  }
+
+  /* Menu list item styles when max-width is 896px */
+  .menu li {
+      flex-basis: 50%;
+  }
+}
+
+/* Media query for max-width: 440px */
+@media (max-width: 440px) {
+  /* Body styles when max-width is 440px */
+  body {
+      margin-top: 185px;
+  }
+
+  /* Menu list item styles when max-width is 440px */
+  .menu li {
+      flex-basis: 100%;
+  }
+
+  /* Side menu styles when max-width is 440px */
+  #sideMenu {
+      top: 184px;
+      height: 100%;
+      color: white;
+      transition: left 0.3s;
+      overflow-y: auto;
+      z-index: 1;
+  }
+
+  /* Right and left arrow button styles when max-width is 440px */
+  #rightarrow, #leftarrow {
+      width: 40px;
+      position: fixed;
+      top: 42px;
+      left: 0px;
+      margin: 6px;
+      border-radius: 50%;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+  }
+
+  /* Submenu styles when max-width is 440px */
+  #sideMenu ul li.has-submenu:hover .submenu {
+      display: block;
+      position: static;
+      width: 100%;
+  }
+}
+
+/**
+* HTML Styles
+* -----------------------------------------------------------------------------
+*/
+
+/* HTML styles */
+html {
+  height: 100%;
+}
+
+/* Head styles */
+head {
+  height: 100%;
+}
+
+/* Link styles */
+link {
+  height: 100%;
+}
+
+/* Meta styles */
+meta {
+  height: 100%;
+}
+
+/* Title styles */
+title {
+  height: 100%;
+}
+
+/**
+* Slideshow Styles
+* -----------------------------------------------------------------------------
+*/
+
+/* Slideshow container styles */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+/* Slide styles within slideshow */
+.slideshow .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  animation: slideShow 30s infinite;
+}
+
+/* Slide styles for each child within slideshow */
+.slideshow .slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slideshow .slide:nth-child(2) {
+  animation-delay: 10s;
+}
+
+.slideshow .slide:nth-child(3) {
+  animation-delay: 20s;
+}
+
+/* Keyframes for slideshow animation */
+@keyframes slideShow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  33.33% { opacity: 1; }
+  38.33% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/**
+* Cookie Consent Popup Styles
+* -----------------------------------------------------------------------------
+*/
+
+/* Cookie consent popup container styles */
+.cookie-consent-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Cookie popup content styles */
+.cookie-popup-content {
+  background-color: rgb(78, 78, 78);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* No-scroll body styles */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/**
+* Hidden Form Data Styles
+* -----------------------------------------------------------------------------
+*/
+
+/* Hidden form data container styles */
+#hiddenFormData {
+  display: none;
+  text-align: center;
+  font-size: large;
+}
+
+/* About section styles */
+#about {
+  text-align: center;
+  font-size: large;
+}

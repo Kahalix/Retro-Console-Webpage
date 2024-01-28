@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/projekt/6170787.png">
+    <title>Consoles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cookie.css">
+    <style>
+        
+        .carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__wrapper {
+  display: flex;
+  transition: transform 0.9s ease;
+}
+
+.carousel__slide {
+  flex: 0 0 100%; /* Adjust the 100% to the percentage of the wrapper's width each slide should take */
+}
+
+.carousel__control {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  width: 50px; /* Width of the arrow */
+  height: 100px; /* Height of the arrow */
+  transform: translateY(-50%); /* Centering adjustment */
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor as pointer */
+  outline: none; /* No outline */
+  transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+.carousel__control--prev,
+.carousel__control--next {
+  position: absolute;
+  top: 17%;
+}
+
+.carousel__control--prev::before,
+.carousel__control--next::before {
+  content: '';
+  border: solid black;
+  border-width: 0 5px 5px 0; /* Adjust thickness of arrow */
+  display: inline-block;
+  padding: 130%; /* Size of the arrow */
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease; /* Transition for hover animation */
+}
+
+.carousel__control::before {
+  /* ... other styles ... */
+  border-width: 0 8px 8px 0; /* Adjust thickness of arrow */
+  
+}
+.carousel__control--prev {
+  left: 8%; /* Position to the left */
+
+}
+
+.carousel__control--prev::before {
+  left: 0;
+  transform: rotate(135deg); /* Arrow pointing left */
+}
+
+.carousel__control--next {
+  right: 8%; /* Position to the right */
+}
+
+.carousel__control--next::before {
+  right: 0;
+  transform: rotate(-45deg); /* Arrow pointing right */
+}
+
+/* Hover animations */
+.carousel__control:hover::before {
+  border-color: #b6b6b6; /* Change arrow color */
+}
+.carousel__indicators {
+  position: absolute;
+  top: 290px;
+  display: flex;
+  width: 250px;
+  height: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+
+}
+.carousel__indicators button {
+  position: relative;
+  width: 40px; /* Set a larger width */
+  height: 30px; /* Set a larger height */
+  font-size: 16px; /* Increase font size if there is text */
+  cursor: pointer;
+  margin: 0 5px;
+  border: none; /* Optional: remove border */
+  border-radius: 50%; /* Optional: make them circular */
+  background-color: #fff; /* Optional: change background color */
+}
+.carousel__indicators button::before {
+  content: '';
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  top: 30%;
+  background-color: black;
+  border-radius: 90%; /* Optional: make the pseudo-element circular */
+}
+
+/* Hover and active styles for buttons, if needed */
+.carousel__indicators button:hover,
+.carousel__indicators button.active{
+    top: -10px;
+}
+.carousel__indicators button.active::before {
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 40%;
+    transition: top 1s, background-color 1s ease;
+}
+.carousel__slide img {
+  width: 70%; /* Adjust this value as needed */
+  height: 250px;
+  border-radius: 20%;
+  display: block;
+  margin: 0 auto; /* This centers the image horizontally within its container */
+    margin-bottom: 70px;
+}
+#mainProducents {
+    text-align: center;
+}
+
+
+.table-wrapper {
+    width: 70%;
+    margin: auto;
+    overflow-x: auto;
+}
+
+.retro-console-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.retro-console-table thead th {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.retro-console-table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+#Nintendo tr {
+    background-color: #b80303;
+}
+#Nintendo tr:nth-child(even) {
+    background-color: rgb(141, 0, 0);
+}
+#Commodore tr:nth-child(even) {
+    background-color: darkgoldenrod; 
+}
+
+#Commodore tr {
+    background-color: rgb(205, 195, 50); 
+}
+#Sega tr:nth-child(even) {
+    background-color: rgb(5, 138, 179); 
+}
+
+#Sega tr {
+    background-color: rgb(29, 183, 255); 
+}
+#Sony tr:nth-child(even) {
+    background-color: rgb(5, 22, 179); 
+}
+
+#Sony tr {
+    background-color: rgb(24, 45, 235); 
+}
+#Microsoft tr {
+    background-color: rgb(15, 182, 51); 
+}
+.retro-console-table img.console-image {
+    width: 150px;
+    height: 100%;
+    border-radius: 20%;
+}
+.retro-console-table td a {
+    text-decoration: none;
+    color: #fff;
+}
+.retro-console-table td a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+@media (max-width: 1100px) {
+
+    .carousel__slide img {
+        width: 70%;
+        height: 150px;
+}
+.carousel__indicators {
+  top: 190px;
+  
+}
+.carousel__control--prev::before,
+.carousel__control--next::before {
+  padding: 80%; /* Size of the arrow */
+}
+    .table-wrapper {
+        width: 100%;
+    }
+    .retro-console-table, .retro-console-table tbody, .retro-console-table th, .retro-console-table td, .retro-console-table tr {
+        display: block;
+        width: 100%;
+        float: right;
+        
+    }
+
+    .retro-console-table th {
+        display: none;
+    }
+
+    .retro-console-table tr {
+        border-bottom: 10px solid #b1b1b1;
+    }
+    .retro-console-table td[data-label]:before {
+        position: absolute;
+        left: 20px;
+        top: 0;
+        padding: 10px;
+        width: 150px;
+        background-color: #555; 
+        color: white;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        content: attr(data-label);
+        
+    }
+    .retro-console-table td {
+        position: relative;
+        text-align: right;
+       
+    }
+  
+
+    .retro-console-table td[data-label="Console Image"]:before {
+        opacity: 0;
+    }
+    .retro-console-table img.console-image {
+        order: -1; /* Place the image before other content in the flex container */
+    }
+}
+@media (max-width: 650px) {
+    /* .retro-console-table td[data-label="Console Name"]:before {
+        opacity: 0;
+    } */
+    .carousel__control--prev {
+        left: 5%; /* Position to the left */
+    }
+
+.carousel__control--next {
+  right: 5%; /* Position to the right */
+}
+
+}
+.hidden {
+    opacity: 0;
+}
+    </style>
+</head>
+<body>
+  <div id="cookieConsentPopup" class="cookie-consent-popup" style="display: none;">
+    <div class="cookie-popup-content">
+        <p>This website uses cookies to provide a better quality of services. Do you agree to their use?</p>
+        <button id="acceptCookies">I agree</button>
+        <button id="declineCookies">I disagree</button>
+    </div>
+</div>
+
+<header>
+    <nav id="mainnav">
+        <img id="mainIcon" src="/projekt/6170787.png" alt="mainIcon">
+        <ul class="menu">
+        <li>
+            <a href="LabStronka.html">Home</a>
+        </li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+</header>
+<aside>
+
+    <img id ="rightarrow" src="/projekt/rightarrow.png" alt="rightarrow">
+    <input type="checkbox" id="btnControl"/>
+    <label class="btn" for="btnControl"><img id ="leftarrow" src="/projekt/leftarrow.png" alt="leftarrow"></label>
+    <div id="sideMenu">
+        <ul>
+            <li class="has-submenu">
+                <a href="#">Producents</a>
+                <ul class="submenu">
+                    <li><a href="/projekt/Producentsinfo.html">Informations</a></li>
+                    <li><a href="/projekt/Producents.html">Consoles/Computers</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">Emulation</a>
+                <ul class="submenu">
+                    <li><a href="#">Informations</a></li>
+                    <li><a href="#">Emulators</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Speedruns</a></li>
+            <li><a href="/projekt/Form.html">Form</a></li>
+        </ul>
+    </div>
+</aside>
+<main id="mainProducents">
+    <h1>Select what you are interested in</h1>
+    <div class="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel__wrapper">
+          <!-- Actual slides -->
+          <div class="carousel__slide"><a href="/projekt/Nintendo.html"><img src="/projekt/Nintendo.png" alt="Nintendo"></a></div>
+          <div class="carousel__slide"><a href="/projekt/Microsoft.html"><img src="/projekt/Microsoft.png" alt="Microsoft"></a></div>
+          <div class="carousel__slide"><a href="/projekt/Sony.html"><img src="/projekt/Sony.jpg" alt="Sony"></a></div>
+          <div class="carousel__slide"><a href="/projekt/Sega.html"><img src="/projekt/Sega.png" alt="Sega"></a></div>
+          <div class="carousel__slide"><a href="/projekt/Commodore.html"><img src="/projekt/Commodore.png" alt="Commodore"></a></div>
+        </div>
+      
+        <!-- Controls -->
+        <button class="carousel__control carousel__control--prev"></button>
+        <button class="carousel__control carousel__control--next"></button>
+      
+        <!-- Indicators -->
+        <div class="carousel__indicators">
+          <button class="carousel__indicator" data-target="Nintendo" data-slide-to="0"></button>
+          <button class="carousel__indicator" data-target="Microsoft" data-slide-to="1"></button>
+          <button class="carousel__indicator" data-target="Sony" data-slide-to="2"></button>
+          <button class="carousel__indicator" data-target="Sega" data-slide-to="3"></button>
+          <button class="carousel__indicator" data-target="Commodore" data-slide-to="4"></button>
+          <!-- ... more indicators -->
+        </div>
+      </div>
+    </div>
+
+    
+    <h1>Retro Console/Computer Database</h1>
+</div>
+    <div class="table-wrapper">
+        <table class="retro-console-table">
+            <thead>
+                <tr>
+                    <th>Console/Computer Image</th>
+                    <th>Console/Computer Name</th>
+                    <th>Year of Production</th>
+                    <th>Manufacturer</th>
+                    <th>Units Sold</th>
+                    <th>Number of Games</th>
+                </tr>
+            </thead>
+            <tbody id="Nintendo" data-slide-index="0">
+                <tr>
+                    <td data-label="Console Image"><img src="/projekt/nes.jpg" alt="Console Image" class="console-image" /></td>
+                    <td data-label="Console Name"><a href="/projekt/Nintendo.html#nes">Nintendo Entertainment System (NES)</a></td>
+                    <td data-label="Year of Production">1983</td>
+                    <td data-label="Manufacturer">Nintendo</td>
+                    <td data-label="Units Sold">61.91 million</td>
+                    <td data-label="Number of Games">1390</td>
+                </tr>
+                <tr>
+                    <td data-label="Console Image"><img src="/projekt/Gameboy.jpg" alt="Console Image" class="console-image" /></td>
+                    <td data-label="Console Name"><a href="/projekt/Nintendo.html#gameboy">Game Boy (GB)</a></td>
+                    <td data-label="Year of Production">1989</td>
+                    <td data-label="Manufacturer">Nintendo</td>
+                    <td data-label="Units Sold">118.69 million including GBC</td>
+                    <td data-label="Number of Games">1041</td>
+                </tr>
+                <tr>
+                    <td data-label="Console Image"><img src="/projekt/snes.jpg" alt="Console Image" class="console-image" /></td>
+                    <td data-label="Console Name"><a href="/projekt/Nintendo.html#snes">Super Nintendo Entertainment System (SNES)</a></td>
+                    <td data-label="Year of Production">1993</td>
+                    <td data-label="Manufacturer">Nintendo</td>
+                    <td data-label="Units Sold">49.1 million</td>
+                    <td data-label="Number of Games">1751</td>
+                </tr>
+                <tr>
+                    <td data-label="Console Image"><img src="/projekt/Nintendo64.jpg" alt="Console Image" class="console-image" /></td>
+                    <td data-label="Console Name"><a href="/projekt/Nintendo.html#nintendo64">Nintendo 64</a></td>
+                    <td data-label="Year of Production">1996</td>
+                    <td data-label="Manufacturer">Nintendo</td>
+                    <td data-label="Units Sold">32.93 million</td>
+                    <td data-label="Number of Games">388</td>
+                </tr>
+                <tr>
+                    <td data-label="Console Image"><img src="/projekt/GameboyColor.jpg" alt="Console Image" class="console-image" /></td>
+                    <td data-label="Console Name"><a href="/projekt/Nintendo.html#gameboy">Game Boy Color (GBC)</a></td>
+                    <td data-label="Year of Production">1998</td>
+                    <td data-label="Manufacturer">Nintendo</td>
+                    <td data-label="Units Sold">118.69 million including GB</td>
+                    <td data-label="Number of Games">916</td>
+                </tr>
+                <tr>
+                    <td data-label="Console Image"><img src="/projekt/Gamecube.jpg" alt="Console Image" class="console-image" /></td>
+                    <td data-label="Console Name"><a href="/projekt/Nintendo.html#gamecube">GameCube</a></td>
+                    <td data-label="Year of Production">2001</td>
+                    <td data-label="Manufacturer">Nintendo</td>
+                    <td data-label="Units Sold">21.74 million</td>
+                    <td data-label="Number of Games">651</td>
+                </tr>
+                <tr>
+                    <td data-label="Console Image"><img src="/projekt/GameboyAdvance.jpg" alt="Console Image" class="console-image" /></td>
+                    <td data-label="Console Name"><a href="/projekt/Nintendo.html#gameboy">Game Boy Advance (GBA)</a></td>
+                    <td data-label="Year of Production">2001</td>
+                    <td data-label="Manufacturer">Nintendo</td>
+                    <td data-label="Units Sold">81.51 million</td>
+                    <td data-label="Number of Games">1538</td>
+                </tr>
+                <tbody id="Sega" data-slide-index="3" style="display: none;">
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/SegaMasterSystem.jpeg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Sega.html#mastersystem">Master System</a></td>
+                        <td data-label="Year of Production">1985</td>
+                        <td data-label="Manufacturer">Sega</td>
+                        <td data-label="Units Sold">10 - 13 million</td>
+                        <td data-label="Number of Games">357</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/SegaGenesis.jpg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Sega.html#genesis">Genesis</a></td>
+                        <td data-label="Year of Production">1988</td>
+                        <td data-label="Manufacturer">Sega</td>
+                        <td data-label="Units Sold">30.75 million</td>
+                        <td data-label="Number of Games">1020</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/SegaGameGear.png" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Sega.html#gamegear">Game Gear</a></td>
+                        <td data-label="Year of Production">1990</td>
+                        <td data-label="Manufacturer">Sega</td>
+                        <td data-label="Units Sold">10.62 million</td>
+                        <td data-label="Number of Games">390</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/SegaSaturn.png" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Sega.html#saturn">Sega Saturn</a></td>
+                        <td data-label="Year of Production">1994</td>
+                        <td data-label="Manufacturer">Sega</td>
+                        <td data-label="Units Sold">9.5 million</td>
+                        <td data-label="Number of Games">1028</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/SegaDreamcast.jpeg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Sega.html#dreamcast">Dreamcast</a></td>
+                        <td data-label="Year of Production">1998</td>
+                        <td data-label="Manufacturer">Sega</td>
+                        <td data-label="Units Sold">9.13 million</td>
+                        <td data-label="Number of Games">620</td>
+                    </tr>
+                </tbody>
+                <tbody id="Commodore" data-slide-index="4" style="display: none;">
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/Commodore64.jpg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Commodore.html#64">Commodore 64</a></td>
+                        <td data-label="Year of Production">1982</td>
+                        <td data-label="Manufacturer">Commodore</td>
+                        <td data-label="Units Sold">12.5 – 17 million</td>
+                        <td data-label="Number of Games">5594</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/amiga500.jpg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Commodore.html#A500">Amiga 500</a></td>
+                        <td data-label="Year of Production">1987</td>
+                        <td data-label="Manufacturer">Commodore</td>
+                        <td data-label="Units Sold">4.85 million</td>
+                        <td data-label="Number of Games">3854</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/Amiga600.jpg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Commodore.html#A600">Amiga 600</a></td>
+                        <td data-label="Year of Production">1992</td>
+                        <td data-label="Manufacturer">Commodore</td>
+                        <td data-label="Units Sold">Around 0.85 million</td>
+                        <td data-label="Number of Games">Unknown</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/Amiga1200.jpg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Commodore.html#A1200">Amiga 1200</a></td>
+                        <td data-label="Year of Production">1992</td>
+                        <td data-label="Manufacturer">Commodore</td>
+                        <td data-label="Units Sold">Around 1 million</td>
+                        <td data-label="Number of Games">Unknown</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/AmigaCD32.jpg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Commodore.html#CD32">Amiga CD32</a></td>
+                        <td data-label="Year of Production">1993</td>
+                        <td data-label="Manufacturer">Commodore</td>
+                        <td data-label="Units Sold">Around 0.1 milion</td>
+                        <td data-label="Number of Games">171</td>
+                    </tr>
+                </tbody>
+                <tbody id="Sony" data-slide-index="2" style="display: none;">
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/SonyPlaystation1.png" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Sony.html#PS1">Playstation 1</a></td>
+                        <td data-label="Year of Production">1994</td>
+                        <td data-label="Manufacturer">Sony</td>
+                        <td data-label="Units Sold">102.4 million</td>
+                        <td data-label="Number of Games"> 7918</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/SonyPlaystation2.jpg" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Sony.html#PS2">Playstation 2</a></td>
+                        <td data-label="Year of Production">2000</td>
+                        <td data-label="Manufacturer">Sony</td>
+                        <td data-label="Units Sold">158 million</td>
+                        <td data-label="Number of Games">4218</td>
+                    </tr>
+                </tbody>
+                <tbody id="Microsoft" data-slide-index="1" style="display: none;">
+                    <tr>
+                        <td data-label="Console Image"><img src="/projekt/MicrosoftXbox.png" alt="Console Image" class="console-image" /></td>
+                        <td data-label="Console Name"><a href="/projekt/Microsoft.html#xboxclassic">Xbox Classic</a></td>
+                        <td data-label="Year of Production">2001</td>
+                        <td data-label="Manufacturer">Microsoft</td>
+                        <td data-label="Units Sold">24 million</td>
+                        <td data-label="Number of Games">998</td>
+                    </tr>
+                </tbody>
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer id="contact">
+    <div class="footer-column">
+        <h3>Email Us</h3>
+        <p><a href="mailto:RetroFans@gmail.com">RetroFans@gmail.com</a></p>
+        <br>
+        <p>Response time is estimated up to 2 days</p>
+    </div>
+    <div class="footer-column">
+        <h3>Call Us</h3>
+        <p><a href="tel:+48123456789">Phone: +48 123 456 789</a></p>
+        <br>
+        <p>We are available 24/7 from Monday to Friday </p>
+    </div>
+    <div class="footer-column">
+        <h3>Cookies</h3>
+        <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
+    </div>
+</footer>
+<script>
+    
+    class Carousel {
+  constructor(element) {
+    this.carouselElement = element;
+    this.carouselWrapper = element.querySelector('.carousel__wrapper');
+    this.slides = Array.from(this.carouselWrapper.children);
+    this.totalSlides = this.slides.length;
+    this.currentIndex = 0;
+    this.isPlaying = true;
+    this.intervalTime = 3000; // Interval time in milliseconds
+    this.init();
+    
+  }
+
+  init() {
+    this.createIndicators();
+    this.updateIndicators();
+    this.attachEventListeners();
+  }
+
+  createIndicators() {
+    const indicatorsContainer = this.carouselElement.querySelector('.carousel__indicators');
+    this.slides.forEach((slide, index) => {
+      let indicator = document.createElement('button');
+      indicator.classList.add('carousel__indicator');
+      indicator.dataset.slideTo = index;
+    });
+
+    this.indicators = Array.from(indicatorsContainer.children);
+  }
+
+  updateIndicators() {
+    this.indicators.forEach((indicator, index) => {
+      indicator.classList.toggle('active', index === this.currentIndex);
+    });
+  }
+
+  attachEventListeners() {
+    this.carouselElement.querySelector('.carousel__control--prev').addEventListener('click', () => this.prev());
+    this.carouselElement.querySelector('.carousel__control--next').addEventListener('click', () => this.next());
+
+    this.indicators.forEach(indicator => {
+      indicator.addEventListener('click', (event) => this.goToSlide(event.target.dataset.slideTo));
+    });
+  }
+
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+    this.updateCarousel();
+  }
+
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+    this.updateCarousel();
+  }
+
+  goToSlide(index) {
+    this.currentIndex = parseInt(index);
+    this.updateCarousel();
+  }
+
+  updateCarousel() {
+  const newTransformValue = -(100 * this.currentIndex);
+  this.carouselWrapper.style.transform = `translateX(${newTransformValue}%)`;
+  this.updateIndicators();
+
+  // Hide all tables
+  document.querySelectorAll('.retro-console-table tbody').forEach(tbody => {
+    tbody.style.display = 'none';
+  });
+
+  // Show the table corresponding to the current slide
+  const targetTable = document.querySelector(`.retro-console-table tbody[data-slide-index="${this.currentIndex}"]`);
+  if (targetTable) {
+    targetTable.style.display = 'table-row-group';
+  }
+}
+}
+
+// Initialization
+document.addEventListener('DOMContentLoaded', () => {
+  const carouselElement = document.querySelector('.carousel');
+  new Carousel(carouselElement);
+});
+</script>
+<script src="cookies.js"></script>
+</body>
+</html>
