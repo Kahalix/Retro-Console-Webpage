@@ -60,7 +60,7 @@ function showConsoleInfo(consoleId) {
     const consoleDisplayDiv = document.getElementById('consoleDisplay');
     consoleDisplayDiv.innerHTML = `
       <div class="console-image">
-        <img src="/projekt/${console.image}" alt="${console.name}">
+        <img src="./projekt/${console.image}" alt="${console.name}">
       </div>`;
 
     /* Display detailed information about the gaming console. */
@@ -71,10 +71,10 @@ function showConsoleInfo(consoleId) {
     const TVDisplay = document.getElementById('TVDisplay');
     TVDisplay.innerHTML = `
     <div class="console-tv-container">
-      <img src="/projekt/${console.tvImage}" alt="TV Image" class="tv-image" />
+      <img src="./projekt/${console.tvImage}" alt="TV Image" class="tv-image" />
       <div class="video-wrapper">
         <video loop id="nesVideo" class="console-video" controls>
-          <source src="/projekt/${console.videoSource}" type="video/mp4">
+          <source src="./projekt/${console.videoSource}" type="video/mp4">
         </video>
       </div>
     </div>`;
@@ -85,7 +85,7 @@ function showConsoleInfo(consoleId) {
     console.games.forEach((game, index) => {
         const gameDiv = document.createElement('div');
         gameDiv.classList.add('game');
-        gameDiv.innerHTML = `<img src="/projekt/${console.gamesImages[index]}" alt="${game}" class="game-img">`;
+        gameDiv.innerHTML = `<img src="./projekt/${console.gamesImages[index]}" alt="${game}" class="game-img">`;
 
         gameDiv.addEventListener('click', () => toggleGameVideo(consoleId, game));
         gamesGridDiv.appendChild(gameDiv);
@@ -113,7 +113,7 @@ function toggleGameVideo(consoleId, gameTitle) {
             }
         } else {
             /* Load and play the video associated with the selected game. */
-            videoElement.src = `/projekt/${gameVideoSrc}`;
+            videoElement.src = `./projekt/${gameVideoSrc}`;
             videoElement.load(); /* Load the new video source */
             videoElement.play();
         }
