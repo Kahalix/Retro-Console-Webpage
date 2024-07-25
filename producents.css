@@ -1,0 +1,275 @@
+        
+        .carousel {
+            position: relative;
+            overflow: hidden;
+          }
+          
+          .carousel__wrapper {
+            display: flex;
+            transition: transform 0.9s ease;
+          }
+          
+          .carousel__slide {
+            flex: 0 0 100%; /* Adjust the 100% to the percentage of the wrapper's width each slide should take */
+          }
+          
+          .carousel__control {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            width: 50px; /* Width of the arrow */
+            height: 100px; /* Height of the arrow */
+            transform: translateY(-50%); /* Centering adjustment */
+            background-color: transparent; /* Transparent background */
+            border: none; /* No border */
+            cursor: pointer; /* Cursor as pointer */
+            outline: none; /* No outline */
+            transition: transform 0.5s ease; /* Smooth transition for sliding */
+          }
+          
+          .carousel__control--prev,
+          .carousel__control--next {
+            position: absolute;
+            top: 17%;
+          }
+          
+          .carousel__control--prev::before,
+          .carousel__control--next::before {
+            content: '';
+            border: solid black;
+            border-width: 0 5px 5px 0; /* Adjust thickness of arrow */
+            display: inline-block;
+            padding: 130%; /* Size of the arrow */
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease; /* Transition for hover animation */
+          }
+          
+          .carousel__control::before {
+            /* ... other styles ... */
+            border-width: 0 8px 8px 0; /* Adjust thickness of arrow */
+            
+          }
+          .carousel__control--prev {
+            left: 8%; /* Position to the left */
+          
+          }
+          
+          .carousel__control--prev::before {
+            left: 0;
+            transform: rotate(135deg); /* Arrow pointing left */
+          }
+          
+          .carousel__control--next {
+            right: 8%; /* Position to the right */
+          }
+          
+          .carousel__control--next::before {
+            right: 0;
+            transform: rotate(-45deg); /* Arrow pointing right */
+          }
+          
+          /* Hover animations */
+          .carousel__control:hover::before {
+            border-color: #b6b6b6; /* Change arrow color */
+          }
+          .carousel__indicators {
+            position: absolute;
+            top: 290px;
+            display: flex;
+            width: 250px;
+            height: 50px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            justify-content: center;
+          
+          }
+          .carousel__indicators button {
+            position: relative;
+            width: 40px; /* Set a larger width */
+            height: 30px; /* Set a larger height */
+            font-size: 16px; /* Increase font size if there is text */
+            cursor: pointer;
+            margin: 0 5px;
+            border: none; /* Optional: remove border */
+            border-radius: 50%; /* Optional: make them circular */
+            background-color: #fff; /* Optional: change background color */
+          }
+          .carousel__indicators button::before {
+            content: '';
+            display: block;
+            margin: auto;
+            width: 50%;
+            height: 50%;
+            top: 30%;
+            background-color: black;
+            border-radius: 90%; /* Optional: make the pseudo-element circular */
+          }
+          
+          /* Hover and active styles for buttons, if needed */
+          .carousel__indicators button:hover,
+          .carousel__indicators button.active{
+              top: -10px;
+          }
+          .carousel__indicators button.active::before {
+              background-color: red;
+              position: absolute;
+              top: 0;
+              left: 30%;
+              width: 40%;
+              transition: top 1s, background-color 1s ease;
+          }
+          .carousel__slide img {
+            width: 70%; /* Adjust this value as needed */
+            height: 250px;
+            border-radius: 20%;
+            display: block;
+            margin: 0 auto; /* This centers the image horizontally within its container */
+              margin-bottom: 70px;
+          }
+          #mainProducents {
+              text-align: center;
+          }
+          
+          
+          .table-wrapper {
+              width: 70%;
+              margin: auto;
+              overflow-x: auto;
+          }
+          
+          .retro-console-table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 0 auto;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          
+          .retro-console-table thead th {
+              background-color: #555;
+              color: #fff;
+              padding: 10px;
+              text-align: center;
+          }
+          .retro-console-table tbody td {
+              padding: 10px;
+              border-bottom: 1px solid #ddd;
+          }
+          #Nintendo tr {
+              background-color: #b80303;
+          }
+          #Nintendo tr:nth-child(even) {
+              background-color: rgb(141, 0, 0);
+          }
+          #Commodore tr:nth-child(even) {
+              background-color: darkgoldenrod; 
+          }
+          
+          #Commodore tr {
+              background-color: rgb(205, 195, 50); 
+          }
+          #Sega tr:nth-child(even) {
+              background-color: rgb(5, 138, 179); 
+          }
+          
+          #Sega tr {
+              background-color: rgb(29, 183, 255); 
+          }
+          #Sony tr:nth-child(even) {
+              background-color: rgb(5, 22, 179); 
+          }
+          
+          #Sony tr {
+              background-color: rgb(24, 45, 235); 
+          }
+          #Microsoft tr {
+              background-color: rgb(15, 182, 51); 
+          }
+          .retro-console-table img.console-image {
+              width: 150px;
+              height: 100%;
+              border-radius: 20%;
+          }
+          .retro-console-table td a {
+              text-decoration: none;
+              color: #fff;
+          }
+          .retro-console-table td a:hover {
+              text-decoration: none;
+              color: #000000;
+          }
+          @media (max-width: 1100px) {
+          
+              .carousel__slide img {
+                  width: 70%;
+                  height: 150px;
+          }
+          .carousel__indicators {
+            top: 190px;
+            
+          }
+          .carousel__control--prev::before,
+          .carousel__control--next::before {
+            padding: 80%; /* Size of the arrow */
+          }
+              .table-wrapper {
+                  width: 100%;
+              }
+              .retro-console-table, .retro-console-table tbody, .retro-console-table th, .retro-console-table td, .retro-console-table tr {
+                  display: block;
+                  width: 100%;
+                  float: right;
+                  
+              }
+          
+              .retro-console-table th {
+                  display: none;
+              }
+          
+              .retro-console-table tr {
+                  border-bottom: 10px solid #b1b1b1;
+              }
+              .retro-console-table td[data-label]:before {
+                  position: absolute;
+                  left: 20px;
+                  top: 0;
+                  padding: 10px;
+                  width: 150px;
+                  background-color: #555; 
+                  color: white;
+                  white-space: nowrap;
+                  text-align: left;
+                  font-weight: bold;
+                  content: attr(data-label);
+                  
+              }
+              .retro-console-table td {
+                  position: relative;
+                  text-align: right;
+                 
+              }
+            
+          
+              .retro-console-table td[data-label="Console Image"]:before {
+                  opacity: 0;
+              }
+              .retro-console-table img.console-image {
+                  order: -1; /* Place the image before other content in the flex container */
+              }
+          }
+          @media (max-width: 650px) {
+              /* .retro-console-table td[data-label="Console Name"]:before {
+                  opacity: 0;
+              } */
+              .carousel__control--prev {
+                  left: 5%; /* Position to the left */
+              }
+          
+          .carousel__control--next {
+            right: 5%; /* Position to the right */
+          }
+          
+          }
+          .hidden {
+              opacity: 0;
+          }

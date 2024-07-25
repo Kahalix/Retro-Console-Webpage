@@ -10,146 +10,7 @@
     <title>Retro Gaming Haven - Your Gateway to Classic Gaming</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="cookie.css">
-    <style>
-          @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  @keyframes spin2 {
-    from {
-      transform: rotate(45deg);
-    }
-    to {
-      transform: rotate(405deg);
-    }
-  }
-  @keyframes spin3 {
-    from {
-      transform: rotate(90deg);
-    }
-    to {
-      transform: rotate(450deg);
-    }
-  }
-  @keyframes spin4 {
-    from {
-      transform: rotate(135deg);
-    }
-    to {
-      transform: rotate(495deg);
-    }
-  }
-  @keyframes spin5 {
-  from {
-    transform: rotate(180deg);
-  }
-  to {
-    transform: rotate(540deg);
-  }
-}
-@keyframes spin6 {
-  from {
-    transform: rotate(225deg);
-  }
-  to {
-    transform: rotate(585deg);
-  }
-}
-@keyframes spin7 {
-  from {
-    transform: rotate(270deg);
-  }
-  to {
-    transform: rotate(630deg);
-  }
-}
-@keyframes spin8 {
-  from {
-    transform: rotate(315deg);
-  }
-  to {
-    transform: rotate(675deg);
-  }
-}
-
-
-.center-text2 {
-    overflow: hidden;
-    visibility: hidden;
-    margin-top: 300px;
-    margin-bottom: 350px;
-   
-  }
-
-  .center-text {
-    position: absolute;
-    top: 700px; /* Change this to 50% */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 325px;
-    height: 325px;
-    border-radius: 50%;
-    background-color: #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    font-size: 23px;
-    z-index: 1;
-}
-
-.surrounding-image img {
-    position: absolute;
-    width: 150px;
-    transform: translate(-50%, -50%);
-    height: 150px;
-    border-radius: 50%;
-    top: 850px; /* Change this to 50% */
-    left: 50%;
-    transform-origin: 0 -150px;
-    z-index: 2;
-}
-
-@media (max-width: 900px) {
-    .center-text2 {
-        margin-bottom: 150px;
-    }
-    .center-text {
-        padding: 1px;
-        top: 595px;
-        font-size: 16px;
-        width: 190px;
-        height: 190px;
-    }
-
-    .surrounding-image img {
-        top: 680px;
-        width: 100px;
-        height: 100px;
-        transform-origin: 0 -85px;
-    }
-}
-
-
-  .surrounding-image:nth-child(8) img { animation: spin 30s linear infinite;}
-  .surrounding-image:nth-child(9) img { animation: spin2 30s linear infinite;}
-  .surrounding-image:nth-child(10) img { animation: spin3 30s linear infinite;}
-  .surrounding-image:nth-child(11) img { animation: spin4 30s linear infinite;}
-  .surrounding-image:nth-child(12) img { animation: spin5 30s linear infinite;}
-  .surrounding-image:nth-child(13) img { animation: spin6 30s linear infinite;}
-  .surrounding-image:nth-child(14) img { animation: spin7 30s linear infinite;}
-  .surrounding-image:nth-child(15) img { animation: spin8 30s linear infinite;}
-
-        h2{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
   <div id="cookieConsentPopup" class="cookie-consent-popup" style="display: none;">
@@ -165,7 +26,7 @@
         <img id="mainIcon" src="/projekt/6170787.png" alt="mainIcon">
         <ul class="menu">
         <li>
-            <a href="LabStronka.html">Home</a>
+            <a href="index.html">Home</a>
         </li>
         <li><a href="#news">News</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -184,8 +45,8 @@
             <li class="has-submenu">
                 <a href="#">Producents</a>
                 <ul class="submenu">
-                    <li><a href="/projekt/Producentsinfo.html">Informations</a></li>
-                    <li><a href="/projekt/Producents.html">Consoles/Computers</a></li>
+                    <li><a href="Producentsinfo.html">Informations</a></li>
+                    <li><a href="Producents.html">Consoles/Computers</a></li>
                 </ul>
             </li>
             <li class="has-submenu">
@@ -196,7 +57,7 @@
                 </ul>
             </li>
             <li><a href="#">Speedruns</a></li>
-            <li><a href="/projekt/Form.html">Form</a></li>
+            <li><a href="Form.html">Form</a></li>
         </ul>
     </div>
 </aside>
@@ -274,7 +135,7 @@ By building this website, the group hopes to preserve the nostalgia and joy that
     </div>
 </footer>
 <script></script>
-<script src="labstronka.js"></script>
+<script src="index.js"></script>
 <script src="cookies.js"></script>
 </body>
 </html>

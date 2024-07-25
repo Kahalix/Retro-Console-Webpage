@@ -1,0 +1,261 @@
+main {
+    font-family: 'Arial', sans-serif;
+}
+
+#advanced-form {
+    background: #393535;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    height: 80%;
+    margin: auto;
+}
+
+#advanced-form input {
+    display: flex;
+    width: 100%;
+
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+#advanced-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#advanced-form button:hover {
+    background: #003d82;
+}
+
+#confirmation {
+    padding: 20px;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+}
+
+.animate-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+#progress-bar {
+    font-size: larger;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.step {
+    width: 25%;
+    height: 30px;
+
+    background: #ddd;
+    color: #0b0b0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.step.active {
+    background: #0056b3;
+}
+
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.flex-container {
+    width: 90%;
+    gap: 10px;
+    display: flex;
+}
+
+.flex-container input {
+    flex: 1;
+    
+    margin-right: 10px;
+    
+}
+
+
+.flex-container input:last-child {
+    margin-right: 0;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+}
+
+
+.input-group input {
+    flex: 1;
+    padding: 10px;
+    margin-bottom: 0;
+    
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.expand-options {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.expand-options:hover {
+    background-color: #0056b3;
+}
+
+.form-container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.form-container label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 25px;
+    user-select: none;
+}
+
+.form-container input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+.form-container input[type="checkbox"]:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.form-container input[type="checkbox"]:checked~.checkmark:after {
+    display: block;
+}
+
+.form-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 7px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+#pageReview {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 250px;
+    font-size: medium;
+}
+.Review {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    font-size: large;
+}
+#confirmation p {
+    font-size: 24px;
+}
+#confirmation a {
+display: block;
+background-color: blue;
+text-decoration: none;
+color: white;
+align-items: center;
+font-weight: bold;
+width: 200px;
+height: auto;
+margin: auto;
+
+padding: 10px;
+text-align: center; 
+margin-top: 10px; 
+}
+#confirmation a:hover {
+background-color: #0a056d; 
+}
+@media (max-width: 750px) {
+#confirmation, #advanced-form input, #advanced-form button, .input-group label, .input-group input, .form-container label, .form-container input[type="checkbox"] {
+font-size: large;
+font-weight: bold;
+}
+}
+.cookie-popup-content {
+display: flex; 
+flex-direction: column; 
+align-items: center; 
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/projekt/6170787.png">
+    <title>Retro Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cookie.css">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <div id="cookieConsentPopup" class="cookie-consent-popup" style="display: none;">
+        <div class="cookie-popup-content">
+            <p>This website uses cookies to provide a better quality of services. Do you agree to their use?</p>
+            <button id="acceptCookies">I agree</button>
+            <button id="declineCookies">I disagree</button>
+        </div>
+    </div>    
+    <header>
+        <nav id="mainnav">
+            <img id="mainIcon" src="/projekt/6170787.png" alt="mainIcon">
+            <ul class="menu">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside>
+
+        <img id="rightarrow" src="/projekt/rightarrow.png" alt="rightarrow">
+        <input type="checkbox" id="btnControl" />
+        <label class="btn" for="btnControl"><img id="leftarrow" src="/projekt/leftarrow.png" alt="leftarrow"></label>
+        <div id="sideMenu">
+            <ul>
+                <li class="has-submenu">
+                    <a href="#">Producents</a>
+                    <ul class="submenu">
+                        <li><a href="Producentsinfo.html">Informations</a></li>
+                        <li><a href="Producents.html">Consoles/Computers</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">Emulation</a>
+                    <ul class="submenu">
+                        <li><a href="#">Informations</a></li>
+                        <li><a href="#">Emulators</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Speedruns</a></li>
+                <li><a href="Form.html">Form</a></li>
+            </ul>
+        </div>
+    </aside>
+    <section>
+
+    </section>
+    <main>
+        
+        <div id="progress-bar">
+            <div class="step active">Personal</div>
+            <div class="step">Pool</div>
+            <div class="step">Review</div>
+        </div>
+
+        <form id="advanced-form">
+
+            
+            <div class="form-step active">
+                <h2>Personal information</h2>
+                <div class="flex-container">
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Michael" pattern="[a-zA-Z]+" required>
+                        
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="surname" placeholder="Cane" pattern="[a-zA-Z]+" required>
+                        
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="mymail@mydomain.com"
+                        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                </div>
+                <div class="input-group"><label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="123456789" pattern="[0-9]{3}[0-9]{3}[0-9]{3}"
+                        required>
+                </div>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            
+            
+            <div class="form-step">
+                <h2>Retro Console/Computer Poll</h2>
+                <div class="form-container">
+                    <form>
+                        <label for="age">At what age did you first play a retro console or computer?</label>
+                        <input type="number" id="age" name="age" min="0" max="120" onkeydown="changeAgeWithArrows(event)">
+                        
+
+                        <label for="nes">NES
+                            <input type="checkbox" id="nes" name="consoles" value="NES">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="snes">SNES
+                            <input type="checkbox" id="snes" name="consoles" value="SNES">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label for="gameboy">GameBoy
+                            <input type="checkbox" id="gameboy" name="consoles" value="GameBoy">
+                            <span class="checkmark"></span>
+                        </label>
+                        
+
+                        <div id="expandedOptions" class="hidden">
+                            
+                            <label for="nintendo64">Nintendo 64
+                                <input type="checkbox" id="nintendo64" name="consoles" value="Nintendo 64">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label for="gameboycolor">GameBoy Color
+                                <input type="checkbox" id="gameboycolor" name="consoles" value="GameBoy Color">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label for="gameboyadvance">GameBoy Advance
+                                <input type="checkbox" id="gameboyadvance" name="consoles" value="GameBoy Advance">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label for="gamecube">GameCube
+                                <input type="checkbox" id="gamecube" name="consoles" value="GameCube">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label for="xboxclassic">Xbox Classic
+                                <input type="checkbox" id="xboxclassic" name="consoles" value="Xbox Classic">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label for="ps1">PS1
+                                <input type="checkbox" id="ps1" name="consoles" value="PS1">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label for="ps2">PS2
+                                <input type="checkbox" id="ps2" name="consoles" value="PS2">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label for="mastersystem">Master System
+                                <input type="checkbox" id="mastersystem" name="consoles" value="Master System">
+                                <span class="checkmark"></span>
+                            </label>
+
+                            <label for="genesis">Genesis
+                                <input type="checkbox" id="genesis" name="consoles" value="Genesis">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+
+                        <a href="#" class="expand-options" onclick="toggleExpandOptions(event)">Show more
+                            options</a><br><br>
+
+                        <label for="other">Other
+                            <input type="checkbox" id="other" name="consoles" value="Other"
+                                onchange="toggleOtherField()">
+                            <span class="checkmark"></span>
+                        </label>
+                        <input type="text" id="otherText" style="display: none;" placeholder="Please specify"><br><br>
+
+                        <button type="button" class="prev-btn">Back</button>
+                        <button type="button" class="next-btn">Next</button>
+                    </div>
+
+            </div>  
+            
+            <div class="form-step">
+                <h2>Review us</h2>
+                <label class="Review" for="pageReview">Please write your review here if you want to help us improve</label><br>
+                <textarea id="pageReview" name="pageReview" rows="4" cols="50"
+                    placeholder="Please write your review here..."></textarea><br><br>
+                
+                <button type="button" class="prev-btn">Back</button>
+                <button type="submit">Submit</button>
+            </div>
+
+        </form>
+
+        
+        <div id="confirmation" style="display: none;">
+            <p>Thank you for your submission!</p>
+            <a href="/projekt/LabStronka.html">Back to Home</a>
+        </div>
+
+    </main>
+
+    <footer id="contact">
+        <div class="footer-column">
+            <h3>Email Us</h3>
+            <p><a href="mailto:RetroFans@gmail.com">RetroFans@gmail.com</a></p>
+            <br>
+            <p>Response time is estimated up to 2 days</p>
+        </div>
+        <div class="footer-column">
+            <h3>Call Us</h3>
+            <p><a href="tel:+48123456789">Phone: +48 123 456 789</a></p>
+            <br>
+            <p>We are available 24/7 from Monday to Friday </p>
+        </div>
+        <div class="footer-column">
+            <h3>Cookies</h3>
+            <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of
+                cookies.</p>
+        </div>
+    </footer>
+   <script src="form.js"></script>
+    <script src="cookies.js"></script>
+</body>
+
+</html>
