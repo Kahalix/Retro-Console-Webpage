@@ -74,7 +74,7 @@
 
   .center-text {
     position: absolute;
-    top: 700px; /* Change this to 50% */
+    top: 700px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 325px;
@@ -97,7 +97,7 @@
     transform: translate(-50%, -50%);
     height: 150px;
     border-radius: 50%;
-    top: 850px; /* Change this to 50% */
+    top: 850px;
     left: 50%;
     transform-origin: 0 -150px;
     z-index: 0;
